@@ -1,0 +1,266 @@
+﻿@model ViewModels.BlogDetailViewModel
+@{
+    ViewBag.Title = Model.Blog.Title;
+    Layout = "~/Views/Shared/FrontEnd/_FrontEndLayout.cshtml";
+}
+<div class="breadcrumb_section bg_gray page-title-mini" style="background-image: url('../../images/banner2.jpg');">
+    <div class="container">
+        <!-- STRART CONTAINER -->
+        <div class="row align-items-center">
+            <div class="col-md-6">
+                <div class="page-title">
+                    <h1>لیست محصولات</h1>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <ol class="breadcrumb justify-content-md-end">
+                    <li class="breadcrumb-item"><a href="/">صفحه اصلی</a></li>
+                    <li class="breadcrumb-item"><a href="#">لیست بلاگ ها</a></li>
+                    <li class="breadcrumb-item"><a href="/blog/@Model.BlogGroup.UrlParam">@Model.BlogGroup.Title</a></li>
+                    <li class="breadcrumb-item active">@Model.Blog.Title</li>
+                </ol>
+            </div>
+        </div>
+    </div><!-- END CONTAINER-->
+</div>
+
+<div class="main_content">
+
+    <!-- START SECTION BLOG -->
+    <div class="section">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-9">
+                    <div class="single_post">
+                        <h2 class="blog_title">@Model.Blog.Title</h2>
+                        <ul class="list_none blog_meta">
+                            <li><a href="#"><i class="ti-calendar"></i>@Model.Blog.CreationDate.ToShortDateString()</a></li>
+                            <li><a href="#"><i class="ti-comments"></i>23</a></li>
+                        </ul>
+                        <div class="blog_img">
+                            <img src="@Model.Blog.ImageUrl" alt="blog_img1">
+                        </div>
+                        <div class="blog_content">
+                            <div class="blog_text">
+                                <p>@Html.Raw(Model.Blog.Body)</p>
+                                <div class="blog_post_footer">
+                                    <div class="row justify-content-between align-items-center">
+
+                                        <div class="col-md-4">
+                                            <ul class="social_icons text-md-right">
+                                                <li><a href="#" class="sc_facebook"><i class="ion-social-facebook"></i></a></li>
+                                                <li><a href="#" class="sc_twitter"><i class="ion-social-twitter"></i></a></li>
+                                                <li><a href="#" class="sc_google"><i class="ion-social-googleplus"></i></a></li>
+                                                <li><a href="#" class="sc_youtube"><i class="ion-social-youtube-outline"></i></a></li>
+                                                <li><a href="#" class="sc_instagram"><i class="ion-social-instagram-outline"></i></a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="related_post">
+                        <div class="content_title">
+                            <h5>بلاگ های مرتبط</h5>
+                        </div>
+                        <div class="row">
+                            @foreach (var blog in Model.RelatedBlogs)
+                            {
+                                <div class="col-md-6">
+                                    <div class="blog_post blog_style2 box_shadow1">
+                                        <div class="blog_img">
+                                            <a href="/blog/@Model.BlogGroup.UrlParam/@blog.UrlParam">
+                                                <img src="@blog.ImageUrl" alt="blog_small_img2">
+                                            </a>
+                                        </div>
+                                        <div class="blog_content bg-white">
+                                            <div class="blog_text">
+                                                <h5 class="blog_title"><a href="/blog/@Model.BlogGroup.UrlParam/@blog.UrlParam">@blog.Title</a></h5>
+                                                <ul class="list_none blog_meta">
+                                                    <li><a href="#"><i class="ti-calendar"></i> @blog.CreationDate.ToShortDateString()</a></li>
+                                                    <li><a href="#"><i class="ti-comments"></i> 2 Comment</a></li>
+                                                </ul>
+                                                <p>@Html.Raw(string.Format(blog.Summery.Length > 100 ? blog.Summery.Substring(0, 100) + "..." : blog.Summery))</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            }
+                        </div>
+                    </div>
+                    <div class="comment-area">
+                        @if (Model.BlogComments.Count() > 0)
+                        {
+                            <div class="content_title">
+                                <h5>@Model.BlogComments.Count() یادداشت</h5>
+                            </div>
+                            <ul class="list_none comment_list">
+                                @foreach (var comment in Model.BlogComments)
+                                {
+                                    <li class="comment_info">
+                                        <div class="d-flex">
+                                            <div class="comment_user">
+                                                <img src="~/images/avatar.png" alt="user2" />
+                                            </div>
+                                            <div class="comment_content">
+                                                <div class="d-flex">
+                                                    <div class="meta_data">
+                                                        <h6><a href="#">@comment.Name</a></h6>
+                                                        <div class="comment-time">@comment.CreationDate.ToShortDateString()</div>
+                                                    </div>
+
+                                                </div>
+                                                <p>@Html.Raw(comment.Message)</p>
+                                            </div>
+                                        </div>
+                                        @if(!string.IsNullOrEmpty(comment.Response))
+                                        {
+                                        <ul class="children">
+                                            <li class="comment_info">
+                                                <div class="d-flex">
+                                                    <div class="comment_user">
+                                                        <img src="~/images/avatar.png" alt="user3" />
+                                                    </div>
+                                                    <div class="comment_content">
+                                                        <div class="d-flex align-items-md-center">
+                                                            <div class="meta_data">
+                                                                <h6><a href="#">ادمین</a></h6>
+                                                            </div>
+                                                           
+                                                        </div>
+                                                        <p>@Html.Raw(comment.Response)</p>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                        }
+                                    </li>
+                                }
+                            </ul>
+                        }
+                        <div class="content_title">
+                            <h5>یادداشت شما</h5>
+                        </div>
+                        <div class="validationMessage">
+                            <p class="alert alert-success" id="successDiv-comment">نظر شما با موفقیت ثبت شد</p>
+                            <p class="alert alert-danger" id="errorDiv-comment"></p>
+                        </div>
+                        <div class="field_form">
+                            <div class="row">
+                                <div class="form-group col-md-6">
+                                    <input name="name" class="form-control" placeholder="نام و نام خانوادگی" required="required" type="text" id="comment_name">
+                                </div>
+                                <div class="form-group col-md-6">
+                                    <input name="email" class="form-control" placeholder="ایمیل" required="required" type="email" id="comment_email">
+                                </div>
+
+                                <div class="form-group col-md-12">
+                                    <textarea rows="3" name="message" class="form-control" placeholder="یادداشت" required="required" id="comment_message"></textarea>
+                                </div>
+                                <div class="form-group col-md-12">
+                                    <button value="Submit" name="submit" class="btn btn-fill-out" title="Submit Your Message!" type="submit" onclick="SubmitBlogComment();" id="submitComment">ارسال</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-3 order-xl-first mt-4 pt-2 mt-xl-0 pt-xl-0">
+                    <div class="sidebar">
+                        <div class="widget">
+                            <div class="search_form">
+                                <form>
+                                    <input required="" class="form-control" placeholder="جستجو..." type="text">
+                                    <button type="submit" title="Subscribe" class="btn icon_search" name="submit" value="ثبت">
+                                        <i class="ion-ios-search-strong"></i>
+                                    </button>
+                                </form>
+                            </div>
+                        </div>
+                        <div class="widget">
+                            <h5 class="widget_title">دسته بندی بلاگ ها</h5>
+                            <ul class="widget_archive">
+                                @foreach (var category in Model.Categories)
+                                {
+                                    <li><a href="/blog/@category.UrlParam"><span class="archive_year">@category.Title</span></a></li>
+                                }
+                            </ul>
+                        </div>
+                        <div class="widget">
+                            <h5 class="widget_title">جدیدترین بلاگ ها</h5>
+                            <ul class="widget_recent_post">
+                                @foreach (var blog in Model.RecentBlogs)
+                                {
+                                    <li>
+                                        <div class="post_footer">
+                                            <div class="post_img">
+                                                <a href="/blog/@blog.BlogGroup.UrlParam/@blog.UrlParam"><img src="@blog.ImageUrl" alt="letest_post1"></a>
+                                            </div>
+                                            <div class="post_content">
+                                                <h6><a href="/blog/@blog.BlogGroup.UrlParam/@blog.UrlParam">@blog.Title</a></h6>
+                                                <p class="small m-0">@blog.CreationDate.ToShortDateString()</p>
+                                            </div>
+                                        </div>
+                                    </li>
+                                }
+                            </ul>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- END SECTION BLOG -->
+
+
+</div>
+
+
+
+<script>
+    function SubmitBlogComment() {
+       
+            var email = $("#comment_email").val();
+            var name = $("#comment_name").val();
+            var message = $("#comment_message").val();
+            if (name === '' || email === '' || message === '') {
+                $("#validationMessage").css('display', 'block');
+                $("#errorDiv-comment").css('display', 'block');
+                $("#successDiv-comment").css('display', 'none');
+
+                $("#errorDiv-comment").text('موارد درخواستی را تکمیل نمایید');
+            }
+            else {
+                $.ajax({
+                    data: { email: email, name: name, message: message, blogId: '@Model.Blog.Id' },
+                    url: '/blogs/InsertComment',
+                    type: 'GET',
+                    success: function (result) {
+                        if (result == "invalidEmail") {
+                            $("#validationMessage").css('display', 'block');
+                            $("#errorDiv-comment").css('display', 'block');
+                            $("#successDiv-comment").css('display', 'none');
+
+                            $("#errorDiv-comment").text('ایمیل وارد شده صحیح نمی باشد');
+                        }
+                        else {
+                            $("#validationMessage").css('display', 'block');
+                            $("#errorDiv-comment").css('display', 'none');
+                            $("#successDiv-comment").css('display', 'block');
+                        }
+                    },
+                    error: function () {
+                        $("#validationMessage").css('display', 'block');
+                        $("#errorDiv-comment").css('display', 'block');
+                        $("#successDiv-comment").css('display', 'none');
+
+                        $("#errorDiv-Contact").text('خطایی رخ داد');
+                    }
+                });
+            }
+       
+    }
+</script>

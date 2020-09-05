@@ -1,0 +1,15 @@
+﻿@font-face {
+    font-family: 'IRANSansWebFaNum';
+    src: url('../fonts/IranSans/IRANSansWebFaNum.eot') format('embedded-opentype'), url('../fonts/IranSans/IRANSansWebFaNum.ttf') format('truetype'), url('../fonts/IranSans/IRANSansWebFaNum.woff') format('woff'), url('../fonts/IranSans/IRANSansWebFaNum.woff2') format('woff2');
+}
+
+body {
+    font-family: IRANSansWebFaNum;
+}
+h1, h2, h3, h4, h5, h6, p, span {
+    font-family: IRANSansWebFaNum;
+}
+.cart_quantity
+{
+    direction:ltr;
+}

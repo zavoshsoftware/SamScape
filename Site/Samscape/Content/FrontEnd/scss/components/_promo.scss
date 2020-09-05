@@ -1,0 +1,820 @@
+/*****************************
+31. Promo CSS
+*****************************/
+
+/*-- 31.00 - Banner Box --*/
+ 
+.banner-box{
+	@extend %posrelative;
+	.banner{
+		&-inner{
+			@extend %posrelative;
+			overflow: hidden;
+		}
+		&-image{
+			@extend %posrelative;
+			width: 100%;
+			height: 100%;				
+			img{
+				width: 100%;
+			}
+		}
+		&-info{
+			@extend %posabsolute;
+			left: 0;
+			top: 0;
+			width: 100%;
+			height: 100%;
+			@include flexbox;
+			@include flex-direction(column);
+			@extend %basetransition;
+			z-index: 1;
+			.btn{
+				&-medium{
+					min-width: 16rem;
+				}
+			}
+		}
+		&-btn{
+			@extend %white-color;
+		}
+		&-link{
+			display: inline-block;
+			text-indent: -9999px;
+			position: absolute;
+			left: 0;
+			top: 0;
+			right: 0;
+			bottom: 0;
+			visibility: inherit;
+			opacity: 0;
+			transition: all 250ms ease-out;
+			z-index: 2;
+		}
+		&-title{
+			&-1{
+				color: $color-white;
+				font-size: 18px;
+				margin-bottom: 0;	
+			}
+			&-2{
+				color: $color-white;
+				font-size: 40px;
+				line-height: 1;
+				margin-bottom: 0;
+				text-transform: uppercase;
+				strong{
+					font-weight: 700;
+				}
+			}
+			&-3{
+				font-size: 1.6rem;
+				line-height: 1;
+			}
+			&-4{
+			    font-weight: bold;
+			    letter-spacing: 10px;
+			    border: 3px solid #fff;
+			    display: inline-block;
+			    vertical-align: middle;
+			    font-size: 72px;
+			    line-height: 1;
+			    span{
+				    width: 50%;
+				    padding: 23px 23px 23px 25px;
+				    float: left;
+			    	&:first-child{
+					    background: #fff;
+					    @extend %heading-color;
+			    	}
+			    	&:last-child{
+						@extend %white-color;
+			    	}
+			    }
+			}
+			&-5{
+			    font-size: 12px;
+			    font-weight: 300;
+			    letter-spacing: 8px;
+			    text-transform: capitalize;
+			    @extend %white-color;
+			}
+			&-6{
+				font-size: 2.8rem;
+				text-transform: capitalize;
+				font-weight: 700;
+				@extend %white-color;
+			}
+			&-7{
+				font-size: 6.7rem;
+				color: $color-white;
+				line-height: 1;
+				@include breakpoint(medium){
+					font-size: 5rem;
+				}
+				@include breakpoint(small){
+					font-size: 4rem;
+				}
+				@include breakpoint(xsmall){
+					font-size: 3rem;
+				}
+			}
+			&-8{
+				font-size: 2.3rem;
+				line-height: 1.4;
+				@include breakpoint(xsmall){
+					font-size: 2rem;
+				}
+			}
+			&-9{
+				font-size: 3.7rem;
+				font-weight: 700;
+				line-height: 1;
+				@include breakpoint(xsmall){
+					font-size: 3rem;
+				}
+			}
+			&-10{
+				font-size: 6rem;
+				color: $color-white;
+				line-height: 1;
+				@include breakpoint(xlarge){
+					font-size: 4.5rem;
+				}
+				@include breakpoint(medium){
+					font-size: 4rem;
+				}
+				@include breakpoint(xsmall){
+					font-size: 3rem;
+				}
+			}
+			&-11{
+				font-size: 4.9rem;
+				color: $color-white;
+				line-height: 1;
+				text-transform: uppercase;
+				@include breakpoint(xlarge){
+					font-size: 4rem;
+				}
+				@include breakpoint(medium){
+					font-size: 3.5rem;
+				}
+				@include breakpoint(xsmall){
+					font-size: 3rem;
+				}
+			}
+		}
+	}
+	&.banner{
+		&-hover-1{
+			.banner{
+				&-image{
+					overflow: hidden;
+					img{
+						@include transition(opacity 0.35s, transform 0.35s);
+						@include transform(scale(1.02));
+					}
+					&:before{
+						@extend %bannergradient;
+					}
+					&:after{
+						@extend %banneroverlay;
+					}
+				}
+			}
+			&:hover{
+				.banner{
+					&-image{
+						img{
+						    @include transform(scale(1));
+						    opacity: 1;	
+						}
+					    &:before{
+							@extend %bannergradienthover;
+					    }
+					    &:after{
+					    	@extend %banneroverlayhover;
+					    }
+					}
+				}
+			}
+		}
+		&-hover-2{
+			&:hover{
+				.banner{
+					&-image{
+						&:after{
+							border-width: 3rem;
+						}
+					}
+					&-btn-2{
+						background: $heading-color;
+				    	span{
+						    &.normal-view{
+								@extend %invisible;
+						    }
+						    &.hover-view{
+								@extend %visible;
+								color: #fff;
+						    }
+				    	}
+					}
+				}
+			}
+		}
+		&-hover-3{
+			.banner{
+				&-image{
+					overflow: hidden;
+					img{
+						@include transition(opacity 0.35s, transform 0.35s);
+						@include transform(scale(1.02));
+					}
+					&:before{
+						@extend %bannergradient;
+					}
+				}
+			}
+			&:hover{
+				.banner{
+					&-image{
+						img{
+						    @include transform(scale(1));
+						    opacity: 1;	
+						}
+					    &:before{
+							@extend %bannergradienthover;
+					    }
+					}
+					&-btn-3{
+						@extend %primary-bg-color;
+						color: #fff !important;
+						border-color: $primary-color;
+					}
+				}
+
+				.btn-style-1{
+					@extend %primary-bg-color;
+					color: #fff !important;
+					border-color: $primary-color;
+				}
+				.banner-btn-4{
+					background-color: $heading-color;
+				}
+			}
+		}
+		&-hover-4{
+			&:hover{
+				.banner{
+					&-image{
+						img{
+							@include transform(scale(1));
+						}
+					}
+					&-info{
+						.banner-btn-3{
+							&:after{
+								background-color: $primary-color;
+								opacity: 1;
+							}
+							span{
+								&.front-view{
+								    opacity: 0;
+								    visibility: hidden;
+								    margin-top: -20px;
+								}
+								&.hover-view{
+									opacity: 1;
+									margin-top: 0;
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+		&-hover-5{
+			&:hover{
+				.banner{
+					&-image{
+						img{
+							@include transform(scale(1));
+						}
+					}
+					&-info{
+						.btn-style-1{
+							@extend %primary-bg-color;
+							color: #fff !important;
+							border-color: $primary-color;
+						}
+					}
+				}
+			}
+		}
+		&-hover-6{
+			.banner{
+				&-image{
+					overflow: hidden;
+					img{
+						@include transition(opacity 0.35s, transform 0.35s);
+						@include transform(scale(1.02));
+					}
+					&:after{
+						@extend %banneroverlay;
+					}
+				}
+			}
+			&:hover{
+				.banner{
+					&-image{
+						img{
+						    @include transform(scale(1));
+						    opacity: 1;	
+						}
+					    &:after{
+					    	background-color: rgba(0, 0, 0, 0.8);
+					    }
+					}
+					&-info{
+						@extend %visible;
+					}
+				}
+			}
+		}
+		&-hover-7{
+			.banner{
+				&-image{
+					overflow: hidden;
+					img{
+						@include transition(opacity 0.35s, transform 0.35s);
+						@include transform(scale(1.02));
+					}
+					&:after{
+						@extend %banneroverlay;
+					}
+				}
+			}
+			&:hover{
+				.banner{
+					&-image{
+						img{
+						    @include transform(scale(1));
+						    opacity: 1;	
+						}
+					    &:after{
+					    	background-color: rgba(40, 40, 40, 0.4);
+					    }
+					}
+					&-info{
+						@extend %visible;
+						&--inner{
+							bottom: 30px;
+						}
+					}
+				}
+			}
+		}
+		&-type-1{
+			.banner{
+				&-info{
+					@include align-items(center);
+					@include justify-content(center);
+					text-align: center;
+					@extend %invisible;
+				}
+				&-btn{
+					font-size: 1.8rem;
+				}
+			}
+			&:hover{
+				.banner{
+					&-info{
+						@extend %visible;
+					}
+				}
+			}
+		}
+		&-type-2{
+			.banner{
+				&-image{
+				    @extend %posrelative;
+				    &:after{
+				    	@extend %pseudo;
+						background-color: rgba(0, 0, 0, 0);
+						left: 0;
+						top: 0;
+						right: 0;
+						bottom: 0;
+						z-index: 1;
+						transition: all .35s;
+						border: 0 solid #fff;
+				    }	
+				}
+				&-info{
+					@include align-items(center);
+					@include justify-content(flex-end);
+				}
+				&-btn-2{
+					margin-bottom: 3rem;
+				}
+			}
+			&:hover{
+				.banner{
+					&-btn-2{
+						background: $heading-color;
+				    	span{
+						    &.normal-view{
+								@extend %invisible;
+						    }
+						    &.hover-view{
+								@extend %visible;
+								color: #fff;
+						    }
+				    	}
+					}
+				}
+			}
+		}
+		&-type-3{
+			.banner{
+				&-info{
+					@include flex-direction(column);
+					@include justify-content(flex-end);
+					text-align: left;
+					padding-left: 5rem;
+					padding-bottom: 5rem;
+					@extend %invisible;
+				}
+			}
+			&:hover{
+				.banner{
+					&-info{
+						@extend %visible;
+					}
+				}
+			}
+			&-1{
+				.banner{
+					&-info{
+						@extend %visible;
+						@include breakpoint(medium){
+							padding-left: 2rem;
+							padding-bottom: 2rem;
+						}
+					}
+					&-title{
+						&-2{
+							@include breakpoint(large){
+								font-size: 2.4rem;
+							}
+						}
+					}
+				}
+			}
+			&-2{
+				.banner{
+					&-info{
+						@extend %visible;
+						padding-left: 2rem;
+						padding-bottom: 2rem;
+					}
+				}
+			}
+		}
+		&-type-4{
+			.banner{
+				&-info{
+					position: static;
+					padding-top: 3rem;
+					@include justify-content(flex-end);
+				}
+			}
+		}
+		&-type-5{
+			.banner{
+				&-info{
+					@include justify-content(center);
+					@include align-items(center);
+					&--inner{
+						text-align: center;
+					}
+					.heading-bigger{
+						@include breakpoint(xlarge){
+							font-size: 7rem;
+						}
+						@include breakpoint(medium){
+							font-size: 5rem;
+						}
+						@include breakpoint(xsmall){
+							font-size: 3.5rem;
+						}
+					}
+					.banner-title-4{
+						@include breakpoint(xlarge){
+							font-size: 3rem;
+							letter-spacing: 5px;
+						}
+						@include breakpoint(xsmall){
+							font-size: 2.5rem;
+							letter-spacing: 2px;
+						}
+						span{
+							@include breakpoint(xlarge){
+								padding: 15px 18px 15px 17px;
+							}
+							@include breakpoint(xsmall){
+								padding: 10px 14px;
+							}
+						}
+					}
+					.banner-title-5{
+						@include breakpoint(xsmall){
+							letter-spacing: 0px;
+						}
+					}
+					.banner-title-6{
+						@include breakpoint(xsmall){
+							font-size: 2rem;
+						}
+					}
+				}
+			}
+		}
+		&-type-6{
+			.banner{
+				&-image{
+					img{
+						@include transform(scale(1.01));
+					}
+				}
+				&-info{
+					@include justify-content(flex-end);
+				}
+			}
+		}
+		&-type-7{
+			.banner{
+				&-image{
+					img{
+						@include transform(scale(1.01));
+					}
+				}
+				&-info{
+					&--inner{
+						position: absolute;
+						text-align: center;
+						top: 50%;
+						color: #fff;
+						max-width: 90%;
+						@include transform(translate(-50%, -50%));
+					}
+
+					p{
+						margin-bottom: 0;
+					}
+				}
+				&-title{
+					&-7{
+						@include breakpoint(large){
+							font-size: 4rem;
+						}
+					}
+					&-8{
+						@include breakpoint(large){
+							font-size: 1.6rem;
+						}
+					}
+				}
+
+			}
+			&.banner{
+				&-1{
+					.banner-info{
+						&--inner{
+							left: 45%;
+							@include breakpoint(xsmall){
+								left: 35%;
+							}
+						}
+					}
+				}
+				&-2{
+					.banner-info{
+						&--inner{
+						    left: 8%;
+						    @include transform(translate(0, -50%));
+						}
+					}
+				}
+				&-3{
+					.banner-info{
+						&--inner{
+							left: 35%;
+						}  
+					}
+				}
+				&-4{
+					.banner-info{
+						&--inner{
+						    left: auto;
+						    right: 10%;
+						    @include transform(translate(0, -50%));
+						}
+					}
+				}
+				&-5{
+					.banner-info{
+						&--inner{
+							left: 10%;
+							top: auto;
+							bottom: 5%;
+						    @include transform(translate(0, -50%));
+						}
+					}
+				}
+			}
+			.btn{
+			    position: absolute;
+			    right: 0;
+			    bottom: 0;
+			    font-family: $font-3;
+			    font-size: 1.4rem;
+			}
+		}
+		&-type-8{
+			.btn{
+			    height: 5.8rem;
+			    line-height: 5.8rem;
+			    padding: 0 3rem;
+			    font-size: 1.3rem;
+			}
+			.btn, .banner-btn{
+			    position: absolute;
+			    left: 0;
+			    bottom: 0;
+			}
+		}
+		&-type-9{
+			.banner-info{
+				@include justify-content(center);
+				@include align-items(center);
+				@extend %invisible;
+
+				&--inner{
+					text-align: center;
+					max-width: 80%;
+				}
+			}
+		}
+		&-type-10{
+			.banner-info{
+				&--inner{
+					@extend %posabsolute;
+					left: 5rem;
+					bottom: 4rem;
+				}
+			}
+		}
+		&-type-11{
+			.banner-info{
+				&--inner{
+					@extend %posabsolute;
+					@include transform(translate(0, -50%));
+					top: 50%;
+					left: 5%;
+					width: 100%;
+					text-align: center;
+				}
+			}
+			&.banner-1{
+				.banner-info{
+					&--inner{
+					    width: auto;
+					    left: auto;
+					    right: 3.5rem;
+					}
+				}
+			}
+			&.banner-2{
+				.banner-info{
+					&--inner{
+					    width: auto;
+					    left: 35px;
+					}
+				}
+			}
+			&.banner-3{
+				.banner-info{
+					&--inner{
+						top: auto;
+						bottom: -5%;
+					}
+				}
+			}
+		}
+		&-type-12{
+			.banner-info{
+				@extend %invisible;
+				&--inner{
+					@extend %posabsolute;
+					bottom: 0;
+					left: 5%;
+					max-width: 100%;
+					text-align: center;
+					@extend %basetransition;
+				}
+			}
+		}
+	}
+}
+
+/*-- 31.01 - Video Banner --*/
+
+.video-banner{
+	&-bg-1{
+		background: url(../img/banner/m02-bg.jpg) no-repeat scroll center/cover;
+	}
+	&-bg-2{
+		background: url(../img/banner/m07-bg1.jpg) no-repeat scroll center/cover;
+	}
+}
+
+/*-- 31.02 - Fullwide Banner --*/
+
+.fullwide-banner{
+	&-bg-1{
+		height: 87rem;
+		background: url(../img/banner/m09-bg1.jpg) no-repeat scroll center/cover;
+		@extend %absFlexCenter;
+		@include breakpoint(xlarge){
+			height: 65rem;
+		}
+		@include breakpoint(large){
+			height: 39rem;
+		}
+	}
+	&-bg-2{
+		background: url(../img/banner/m11-bg2.jpg) no-repeat scroll center/cover;
+	}
+	&-bg-3{
+		background: url(../img/banner/m12-bg2.jpg) no-repeat scroll center/cover;
+	}
+	&-bg-4{
+		background: url(../img/banner/m13-bg2.jpg) no-repeat scroll center/cover;
+	}
+	&-title{
+		&-1{
+			font-size: 3.6rem;
+			letter-spacing: 4rem;
+			@include breakpoint(xlarge){
+				letter-spacing: 3rem;
+				font-size: 2.6rem;
+			}
+			@include breakpoint(large){
+				letter-spacing: 1rem;
+			}
+			@include breakpoint(small){
+				letter-spacing: 0;
+				font-size: 2rem;
+			}
+		}
+		&-2{
+			font-size: 19.9rem;
+			line-height: 1.1;
+			@include breakpoint(xlarge){
+				font-size: 15rem;
+				line-height: 1;
+			}
+			@include breakpoint(large){
+				font-size: 12rem;
+				line-height: 1;
+			}
+			@include breakpoint(small){
+				font-size: 9rem;
+			}
+			@include breakpoint(xsmall){
+				font-size: 7rem;
+			}
+		}
+		&-3{
+			@extend %white-color;
+			font-size: 2rem;
+			margin-bottom: .5rem;
+		}
+		&-4{
+			@extend %white-color;	
+			font-size: 10rem;
+			line-height: 1.1;	
+			font-weight: 700;	
+			@include breakpoint(large){
+				font-size: 8rem;
+			}	
+			@include breakpoint(medium){
+				font-size: 6rem;
+			}
+			@include breakpoint(small){
+				font-size: 5rem;
+			}
+		}
+	}
+}

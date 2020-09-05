@@ -1,0 +1,91 @@
+﻿@model ViewModels.CallBackViewModel
+	@{
+			ViewBag.Title = "نتیجه خرید";
+			Layout = "~/Views/Shared/FrontEnd/_FronEndLayout.cshtml";
+	}
+
+
+	<div class="breadcrumb-area bg--white-6 pt--60 pb--70 pt-lg--40 pb-lg--50 pt-md--30 pb-md--40">
+		<div class="container-fluid">
+			<div class="row">
+				<div class="col-12 text-center">
+					<h1 class="page-title">نتیجه پرداخت</h1>
+					<ul class="breadcrumb justify-content-center">
+						<li><a href="/">خانه</a></li>
+						<li class="current"><span>نتیجه پرداخت</span></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+	<div id="content" class="main-content-wrapper">
+		<div class="page-content-inner">
+			<div class="container">
+				<div class="row pt--80 pb--80 pt-md--45 pt-sm--25 pb-md--60 pb-sm--40">
+
+					<div class="col-lg-2">
+					</div>
+						
+					<div class="col-lg-8">
+						@if (Model.IsSuccess)
+						{
+								<p class="heading-color mb--30 text-center alert alert-success">
+									پرداخت سفارش شما با موفقیت انجام شد
+								</p>
+								<div class="panel panel-primary">
+									<div class="panel-heading text-right">اطلاعات پرداحت</div>
+									<div class="panel-body text-right">
+										<table class="table table-hover" style="direction: rtl;">
+											<tbody>
+						 
+												<tr>
+													<td>شماره فاکتور: </td>
+													<td>@Model.OrderCode </td>
+												</tr>
+											<tr>
+												<td>شماره پیگیری: </td>
+												<td>@Model.RefrenceId </td>
+											</tr>
+												<tr>
+													<td>مبلغ پرداختی: </td>
+													<td>@Model.TotalAmount </td>
+												</tr>
+											</tbody>
+										</table>
+ 
+									</div>
+								</div>
+
+						}
+						@if (!Model.IsSuccess)
+						{
+								<p class="heading-color mb--30 text-center alert alert-danger">
+									خطا در انجام عملیات پرداخت
+								</p>
+								<div class="panel panel-primary">
+									<div class="panel-heading text-right">اطلاعات پرداحت</div>
+									<div class="panel-body text-right">
+										<table class="table table-hover">
+											<tbody>
+												<tr>
+													<td>کد خطا: </td>
+													<td>@Model.RefrenceId </td>
+												</tr>
+
+
+											</tbody>
+										</table>
+										<p>
+											کاربر گرامی در صورتی که مبلغ سفارش از حساب شما کسر شده است، حداکثر ظرف مدت 72 ساعت به حساب شما باز خواهد گشت. در صورت مشکل با شماره تلفن پشتیبانی تماس بگیرید.
+										</p>
+									</div>
+								</div>
+
+						}
+					</div>
+					</div>
+			</div>
+		</div>
+	</div>

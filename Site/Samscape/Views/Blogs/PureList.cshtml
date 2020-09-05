@@ -1,0 +1,52 @@
+﻿@model ViewModels.BlogGroupViewModel
+@{
+    Layout = "~/Views/Shared/FrontEnd/_FronEndLayout.cshtml";
+}
+
+<div class="breadcrumb-area bg--white-6 pt--60 pb--70 pt-lg--40 pb-lg--50 pt-md--30 pb-md--40">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-12 text-center">
+                <h1 class="page-title">وبلاگ</h1>
+                <ul class="breadcrumb justify-content-center">
+                    <li><a href="/">خانه</a></li>
+                    <li class="current"><span>لیست وبلاگ ها</span></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="content" class="main-content-wrapper">
+    <div class="page-content-inner">
+        <div class="container">
+            <div class="row pt--80 pt-md--60 pt-sm--50">
+                @foreach (var blog in Model.Blogs)
+                {
+                    <div class="col-sm-6 col-lg-4 mb--40 mb-md--30 mb-sm--25">
+                        <article class="post">
+                            <div class="post-media">
+                                <div class="image">
+                                    <img src="@blog.ImageUrl" alt="Blog">
+                                    <a href="/blog/@blog.BlogGroup.UrlParam/@blog.UrlParam" class="link-overlay">@blog.Title</a>
+                                </div>
+                            </div>
+                            <div class="post-info">
+                                <h3 class="post-title">
+                                    <a href="/blog/@blog.BlogGroup.UrlParam/@blog.UrlParam">@blog.Title</a>
+                                </h3>
+                                <div class="post-meta">
+                                    <a href="#" class="posted-on" tabindex="0">@blog.CreationDateStr</a>
+                                </div>
+                                <div class="post-content">
+                                    @Html.Raw(blog.Summery)
+                                </div>
+                                <a href="/blog/@blog.BlogGroup.UrlParam/@blog.UrlParam" class="read-more-btn">ادامه مطلب</a>
+                            </div>
+                        </article>
+                    </div>
+                }
+            </div>
+
+        </div>
+    </div>
+</div>

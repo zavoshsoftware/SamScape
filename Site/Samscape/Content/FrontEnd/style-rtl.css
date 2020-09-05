@@ -1,0 +1,447 @@
+﻿@font-face {
+    font-family: 'Iransans';
+    src: url(/fonts/IranSans/IRANSansWebFaNum.eot) format('embedded-opentype'), url(/fonts/IranSans/IRANSansWebFaNum.woff2) format('woff2'), url(/fonts/IranSans/IRANSansWebFaNum.woff) format('woff'), url(/fonts/IranSans/IRANSansWebFaNum.ttf) format('truetype');
+}
+
+body, p, a, h1, h2, h3, h4, h5, h6, ul, li, input, button, table, th, td, .breadcrumbs-menu li, .contact-form button {
+    font-family: IRANSans;
+}
+
+.tp-caption {
+    font-family: IRANSans !important;
+}
+
+.header-inner ul.social, .product-info {
+    text-align: right;
+}
+
+.header-inner .header-contact-info, .product-title, .newsletter-form {
+    text-align: right;
+    direction: rtl;
+}
+
+.header-middle-right, .user-info-menu-btn ul li a {
+    text-align: right;
+    direction: rtl;
+}
+
+.main-navigation .mainmenu--centered, span.money, span.product-price-old {
+    direction: rtl;
+}
+
+.megamenu li {
+    text-align: right;
+}
+
+.product-image--holder {
+    background-color: #e5e5e5;
+}
+
+.footer-widget {
+    text-align: right;
+}
+
+    .footer-widget .textwidget p {
+        text-align: justify;
+        direction: rtl;
+    }
+
+    .footer-widget .social {
+        text-align: right;
+    }
+
+.contact-info__item, ul.prouduct-categories, ul.product-widget__list, ul.product-widget__list, .product-description p, .review__container, .review-form-wrapper, .variation-form .swatch-label {
+    direction: rtl;
+    text-align: right;
+}
+
+
+.product-action {
+    direction: rtl;
+}
+
+.copyright-text {
+    text-align: left !important;
+    direction: ltr !important;
+}
+
+.social-small {
+    text-align: right;
+}
+
+.add-to-basket {
+    display: block;
+    margin-top: 15px;
+}
+
+.cart-totals {
+    direction: rtl;
+}
+
+    .cart-totals h5 {
+        text-align: right;
+    }
+
+    .cart-totals .table-content table tr th:first-child {
+        text-align: right;
+        width: 14rem;
+    }
+
+.cart-form .table-content table {
+    direction: rtl;
+}
+
+.coupon {
+    direction: rtl;
+}
+
+#errorDiv-discount, #successDiv-discount {
+    display: none;
+    direction: rtl;
+    text-align: right;
+}
+
+.user-info label {
+    direction: rtl;
+    text-align: right;
+}
+
+.table-content {
+    margin-top: 1.5rem;
+}
+
+.user-info .row {
+    margin-top: 1.5rem;
+}
+
+#error-addbasket {
+    display: none;
+    direction: rtl;
+    text-align: right;
+    margin-top: 5px;
+}
+
+#error-box, #error-box-otp {
+    display: none;
+    direction: rtl;
+    text-align: right;
+}
+
+#otp-section {
+    display: none;
+}
+
+.loading-img {
+    display: none;
+}
+
+    .loading-img img {
+        margin: 0 auto;
+    }
+
+.alert {
+    direction: rtl;
+    text-align: right;
+}
+
+
+
+
+/*  Login*/
+
+.login {
+    background-color: #ec0000;
+    text-align: right;
+    direction: rtl;
+    margin-top: 25px;
+    border-top-right-radius: 5px;
+    border-top-left-radius: 5px;
+}
+
+    .login .login-header {
+        color: #fff;
+        text-align: center;
+        padding: 10px 0;
+        border-bottom: 1px solid #080606;
+    }
+
+    .login .login-form {
+        padding: 25px 0;
+    }
+
+        .login .login-form label {
+            color: #fff;
+        }
+
+.input-group > .input-group-prepend > .input-group-text {
+    border-top-right-radius: .25rem;
+    border-bottom-right-radius: .25rem;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+}
+
+.input-group-prepend {
+    margin-right: auto;
+    margin-left: -1px;
+}
+
+.input-group > .form-control:not(:first-child) {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    border-top-left-radius: .25rem;
+    border-bottom-left-radius: .25rem;
+}
+
+a.forget-pass {
+    float: left;
+    color: #080606;
+    border-bottom: 1px dotted #080606;
+}
+
+    a.forget-pass:hover {
+        text-decoration: none;
+    }
+
+.btn-savadimo-login {
+    background-color: #080606;
+    padding: 7px 10px;
+    text-align: center;
+    direction: rtl;
+    border-radius: 6px;
+    color: #fff;
+    font-size: 15px;
+    border-color: #080606;
+    width: 100%;
+}
+
+.login-form .form-group p {
+    margin: 0;
+    padding: 0;
+}
+
+.login-footer {
+    padding: 25px 0;
+    background-color: #080606;
+    margin-bottom: 25px;
+    border-bottom-right-radius: 5px;
+    border-bottom-left-radius: 5px;
+    text-align: center;
+    direction: rtl;
+    color: #fff;
+}
+
+    .login-footer label {
+        color: #fff;
+    }
+
+    .login-footer a {
+        color: #ec0000;
+        border-bottom: 1px dotted #080606;
+    }
+
+        .login-footer a:hover {
+            text-decoration: none;
+        }
+
+.login-form p {
+    color: #fff;
+}
+
+    .login-form p a {
+        color: #080606;
+        border-bottom: 1px dotted #080606;
+    }
+
+        .login-form p a:hover {
+            text-decoration: none;
+        }
+
+.alert-savadimo {
+    background-color: #080606;
+    border-radius: 5px;
+    color: #fff;
+    border: 1px solid #0e4147;
+}
+
+
+#error-box-login, #otp-form, #error-box-register, #register-form, #error-box-otp {
+    display: none;
+}
+
+.loading-sec {
+    display: none;
+    text-align: center
+}
+
+.login input.form-control {
+    padding: 22px 10px;
+}
+
+/*login*/
+
+
+/*blog*/
+
+.blog-widget .widget-title {
+    text-align: right;
+    direction: rtl;
+}
+
+.blog-widget .menu li {
+    text-align: right;
+    direction: rtl;
+}
+
+.recent-post__title a {
+    font-family: Iransans;
+}
+
+.recent-post__item {
+    direction: rtl;
+}
+
+.recent-post__content {
+    padding-left: unset;
+    padding-right: 2rem;
+    text-align: right;
+    direction: rtl;
+}
+
+.single-post-details .entry-title, .single-post-details .entry-meta-top, .single-post-details .entry-meta-bottom {
+    text-align: right;
+    direction: rtl;
+}
+
+.single-post-details .entry-thumbnail img {
+    width: 100%;
+}
+
+.single-post-details .entry-content {
+    text-align: right;
+    direction: rtl;
+    margin-bottom: 50px;
+}
+
+.comment-reply-title {
+    text-align: right;
+    direction: rtl;
+}
+
+.comment .single-comment {
+    direction: rtl;
+}
+
+.comment-avatar {
+    margin-right: unset;
+    margin-left: 2.5rem;
+}
+
+.comment-info {
+    text-align: right;
+    direction: rtl;
+}
+
+.comment .children {
+    margin-left: unset;
+    margin-right: 2rem;
+}
+
+.form__label {
+    text-align: right;
+    direction: rtl;
+}
+
+.blog-style-2 .blog-info {
+    text-align: right;
+    direction: rtl;
+}
+
+.right-align {
+    text-align: right;
+    direction: rtl;
+}
+
+.panel {
+    border: 2px solid #e5e5e5;
+    padding: 10px;
+    border-radius: 3px;
+    text-align: right;
+    direction: rtl;
+}
+
+    .panel .panel-heading {
+        font-size: 18px;
+        color: red;
+        margin-bottom: 5px;
+    }
+
+    .panel .panel-body {
+        padding: 5px;
+        min-height: 200px;
+        line-height: 27px;
+        color:#000;
+    }
+
+.table-style-3 {
+    color: #000;
+}
+
+    .table-style-3 thead {
+        background: #e5e5e5;
+    }
+
+    .table-style-3 th {
+        padding: 10px 0 !important;
+        border: 1px solid #ddd !important;
+        text-align: center;
+        font-size: 14px !important;
+        font-weight: bold !important;
+    }
+
+    .table-style-3 td {
+        border: 1px solid #ddd;
+        text-align: center;
+        padding: 10px 0;
+    }
+#errorDiv-contact, #successDiv-contact {
+    display: none;
+    direction: rtl;
+    text-align: right;
+}
+#errorDiv-comment, #successDiv-comment {
+    display: none;
+    direction: rtl;
+    text-align: right;
+}
+.product-widget {
+    border: 1px solid #ccc;
+    padding: 10px;
+    box-shadow: 3px 4px #efeded9e;
+    border-radius: 5px;
+}
+    .product-widget h3 {
+        border-bottom: 1px solid #f2f2f2;
+        padding: 10px;
+        color: #535353;
+    }
+    .product-widget .widget-title {
+        font-size: 1.7rem;
+    }
+#comment-succes, #comment-reject
+{
+    display:none;
+}
+.pr_detail .pr_desc p 
+{
+    text-align:justify;
+}
+.color-black {
+    color: #000 !important;
+}
+#validationMessage
+{
+    display:none;
+}
+#errorDiv, #SuccessDiv {
+    display: none;
+}

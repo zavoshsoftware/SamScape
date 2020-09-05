@@ -1,0 +1,63 @@
+﻿@model ViewModels.ProductGroupListViewModel
+
+
+<div class="breadcrumb-area bg--white-6 pt--60 pb--70 pt-lg--40 pb-lg--50 pt-md--30 pb-md--40">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-12 text-center">
+                <h1 class="page-title">لیست محصولات</h1>
+                <ul class="breadcrumb justify-content-center">
+                    <li><a href="/">خانه</a></li>
+                    <li class="current"><span>لیست محصولات</span></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div id="content" class="main-content-wrapper">
+    <div class="page-content-inner enable-page-sidebar">
+        <div class="container-fluid">
+            <div class="row shop-sidebar pt--45 pt-md--35 pt-sm--20 pb--60 pb-md--50 pb-sm--40">
+                <div class="col-lg-12 order-lg-2" id="main-content">
+
+                    <div class="shop-products">
+                        <div class="row grid-space-20 xxl-block-grid-4">
+
+
+                            @foreach (var product in Model.Categories)
+                            {
+                                <div class="col-xl-3 col-lg-4 col-sm-6 mb--40 mb-md--30">
+                                    <div class="airi-product">
+                                        <div class="product-inner">
+                                            <figure class="product-image">
+                                                <div class="product-image--holder">
+                                                    <a href="/category/@product.UrlParam">
+                                                        <img src="@product.ImageUrl" alt="@product.Title" class="primary-image">
+                                                    </a>
+                                                </div>
+
+                                            </figure>
+                                            <div class="product-info">
+                                                <h3 class="product-title">
+                                                    <a href="/category/@product.UrlParam">@product.Title</a>
+                                                </h3>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            }
+
+
+
+                        </div>
+                    </div>
+                </div>
+
+
+               
+            </div>
+        </div>
+    </div>
+</div>

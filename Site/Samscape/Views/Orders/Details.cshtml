@@ -1,0 +1,98 @@
+﻿@model ViewModels.OrderDetailViewModel
+@{
+    Layout = "~/Views/Shared/FrontEnd/_FronEndLayout.cshtml";
+}
+<div class="breadcrumb-area bg--white-6 pt--60 pb--70 pt-lg--40 pb-lg--50 pt-md--30 pb-md--40">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-12 text-center">
+                <h1 class="page-title">جزئیات سفارش @Model.Order.Code</h1>
+                <ul class="breadcrumb justify-content-center">
+                    <li><a href="/">خانه</a></li>
+                    <li><a href="/orders/list">لیست سفارشات</a></li>
+                    <li class="current"><span>جزئیات سفارش @Model.Order.Code</span></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="content" class="main-content-wrapper">
+    <div class="page-content-inner">
+        <div class="container">
+            <div class="row pt--80 pt-md--60 pt-sm--50  right-align">
+                <div class="col-sm-6 col-lg-6 mb--40 mb-md--30 mb-sm--25">
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                مشخصات سفارش
+                            </div>
+                            <div class="panel-body">
+                               <div class="row">
+                                   <div class="col-md-4 col-lg-4">تاریخ ثبت</div>
+                                   <div class="col-md-8 col-lg-8">@Model.Order.CreationDateStr</div>
+                               </div>
+                                <div class="row">
+                                    <div class="col-md-4 col-lg-4">شماره سفارش</div>
+                                    <div class="col-md-8 col-lg-8">@Model.Order.Code</div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-4 col-lg-4">وضعیت پرداخت</div>
+                                    <div class="col-md-8 col-lg-8">@Model.Order.OrderStatus.Title</div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-4 col-lg-4">مبلغ سفارش</div>
+                                    <div class="col-md-8 col-lg-8">@Model.Order.SubTotal.Value.ToString("N0") تومان</div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-4 col-lg-4">تخفیف</div>
+                                    <div class="col-md-8 col-lg-8">@Model.Order.DiscountAmount.Value.ToString("N0") تومان</div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-4 col-lg-4">هزینه ارسال</div>
+                                    <div class="col-md-8 col-lg-8">@Model.Order.ShippingAmount.Value.ToString("N0") تومان</div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-4 col-lg-4">مبلغ قابل پرداخت</div>
+                                    <div class="col-md-8 col-lg-8">@Model.Order.TotalAmount.ToString("N0") تومان</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-6 col-lg-6 mb--40 mb-md--30 mb-sm--25">
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                سفارشات
+                            </div>
+                            <div class="panel-body">
+                                <div class="table-content table-responsive">
+                                    <table class="table table-style-3 text-center">
+                                        <thead>
+                                            <tr>
+                                                <th>عنوان محصول</th>
+                                                <th>قیمت</th>
+                                                <th>تعداد</th>
+                                                <th>جمع کل</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            @foreach (var order in Model.OrderDetails)
+                                            {
+                                                <tr>
+                                                    <td>@order.Product.Title</td>
+                                                    <td>@order.Price.ToString("N0") تومان</td>
+                                                    <td>@order.Quantity</td>
+                                                    <td>@order.Amount.ToString("N0") تومان</td>
+                                                </tr>
+                                            }
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                   
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,136 @@
+﻿@model ViewModels.ProductListViewModel
+ 
+ 
+	<div class="breadcrumb-area bg--white-6 pt--60 pb--70 pt-lg--40 pb-lg--50 pt-md--30 pb-md--40">
+			<div class="container-fluid">
+				<div class="row">
+					<div class="col-12 text-center">
+						<h1 class="page-title">@Model.ProductGroup.Title</h1>
+						<ul class="breadcrumb justify-content-center">
+							<li><a href="/">خانه</a></li>
+							<li><a href="/category/@Model.ProductGroup.Parent.UrlParam">@Model.ProductGroup.Parent.Title</a></li>
+							<li class="current"><span>@Model.ProductGroup.Title</span></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+
+ 
+		<div id="content" class="main-content-wrapper">
+			<div class="page-content-inner enable-page-sidebar">
+				<div class="container-fluid">
+					<div class="row shop-sidebar pt--45 pt-md--35 pt-sm--20 pb--60 pb-md--50 pb-sm--40">
+						<div class="col-lg-9 order-lg-2" id="main-content">
+						 
+							<div class="shop-products">
+								<div class="row grid-space-20 xxl-block-grid-4">
+					
+									
+									@foreach (var product in Model.Products)
+									{
+										<div class="col-xl-3 col-lg-4 col-sm-6 mb--40 mb-md--30">
+											<div class="airi-product">
+												<div class="product-inner">
+													<figure class="product-image">
+														<div class="product-image--holder">
+															<a href="/product/@product.Code">
+																<img src="@product.ImageUrl" alt="@product.Title" class="primary-image">
+																<img src="@product.SecondImageUrl" alt="@product.Title" class="secondary-image">
+															</a>
+														</div>
+													 
+													</figure>
+													<div class="product-info">
+														<h3 class="product-title">
+															<a href="/product/@product.Code">@product.Title</a>
+														</h3>
+														<span class="product-price-wrapper">
+									
+															@if (Model.IsPartner)
+															{
+																				
+																<span class="money">@product.PartnerAmountStr تومان</span>
+																<span class="product-price-old">
+																	<span class="money">@product.AmountStr تومان</span>
+																</span>
+															}
+																else if (product.IsInPromotion)
+															{
+																<span class="money">@product.DiscountAmountStr تومان</span>
+																<span class="product-price-old">
+																	<span class="money">@product.AmountStr تومان</span>
+																</span>
+															}
+															else
+															{
+																<span class="money">@product.AmountStr تومان</span>
+															}
+
+														</span>
+													</div>
+												</div>
+											</div>
+										</div>
+									}
+
+								 
+
+								</div>
+							</div>
+							@*<nav class="pagination-wrap">
+								<ul class="pagination">
+									<li><a href="shop-sidebar.html" class="prev page-number"><i class="fa fa-angle-double-left"></i></a></li>
+									<li><span class="current page-number">1</span></li>
+									<li><a href="shop-sidebar.html" class="page-number">2</a></li>
+									<li><a href="shop-sidebar.html" class="page-number">3</a></li>
+									<li><a href="shop-sidebar.html" class="next page-number"><i class="fa fa-angle-double-right"></i></a></li>
+								</ul>
+							</nav>*@
+						</div>
+
+
+						<div class="col-lg-3 order-lg-3 mt--30 mt-md--40" id="primary-sidebar">
+							<div class="sidebar-widget">
+								<!-- Category Widget Start -->
+								<div class="product-widget categroy-widget mb--35 mb-md--30">
+									<h3 class="widget-title">گروه محصولات</h3>
+									<ul class="prouduct-categories product-widget__list">
+										@foreach (var productGroup in Model.ProductGroups)
+										{
+												<li><a href="/category/@productGroup.UrlParam">@productGroup.Title</a></li>
+
+										}
+						
+									</ul>
+								</div>
+		
+
+
+								<div class="product-widget product-widget--size mb--25 mb-md--20">
+									<h3 class="widget-title">سن</h3>
+									<ul class="product-widget__list">
+										@foreach (var ageRange in Model.AgeRanges)
+										{
+												<li><a href="/@Model.Url?ageRangeparam=@ageRange.UrlParam">@ageRange.Title</a></li>
+}
+									</ul>
+								</div>
+
+								@*<div class="product-widget product-widget--brand mb--40 mb-md--30">
+									<h3 class="widget-title">برند</h3>
+									<ul class="product-widget__list">
+										@foreach (var brand in Model.Brands)
+										{
+												<li><a href="/@Model.Url?brandparam=@brand.UrlParam">@brand.Title</a></li>
+}
+									</ul>
+								</div>*@
+
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+ 

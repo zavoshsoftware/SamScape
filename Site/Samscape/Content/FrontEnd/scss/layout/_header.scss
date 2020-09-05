@@ -1,0 +1,591 @@
+/*****************************
+10. Header CSS
+*****************************/
+
+
+/*-- 10.00 - Header CSS --*/
+
+.header{
+	@extend %posrelative;
+	z-index: 9;
+	.logo{
+		&-box{
+			display: block;
+			@extend %posrelative;
+			z-index: 99;
+			img{
+				max-height: 90%;
+			}
+		}
+		&--normal{
+			@extend %visible;
+			height: auto;
+		}
+		&--transparency{
+			@extend %invisible;
+			height: 0;
+		}
+	}
+	.sticky-logo{
+		display: none;
+	}
+	.sticky-toolbar{
+		display: none;
+	}
+	.top-bar{
+		background-color: $heading-color;
+		@extend %white-color;
+		padding: 1rem 0;
+	}
+	&-inner{	
+		padding-top: 3.5rem;
+		padding-bottom: 3.5rem;
+		@include breakpoint(large){
+		    padding-top: 3rem;
+		    padding-bottom: 3rem;
+		}
+		@include breakpoint(medium){
+			visibility: hidden;
+			opacity: 0;
+		    padding-top: 2rem;
+		    padding-bottom: 2rem;
+		}
+	}
+	&-toolbar{
+		@include flexbox;
+		@include justify-content(flex-end);
+		@include align-items(center);
+		&__item{
+			@extend %posrelative;
+			& > a{
+			    width: 4rem;
+			    height: 5rem;
+			    line-height: 5.5rem;
+			    display: block;
+			    text-align: center;
+			    font-size: 1.8rem;
+			    color: #fff;
+			    @include breakpoint(medium){
+			    	color: $body-color;
+			    }
+			}
+			& > a, & > button{
+				z-index: 99;
+				position: relative;
+			}
+			&:hover{
+				& > a{
+					@extend %primary-color;
+				}
+			}
+		}
+	}
+	&-top{
+		background: $color-white-light-5;
+		padding-top: 3px;
+		padding-bottom: 3px;
+		font-size: 1.3rem;
+	}
+	&-component{
+		@include flexbox;
+		@include align-items(center);
+		@include justify-content(flex-end);
+		&__item{
+			margin-left: 2rem;
+			@extend %posrelative;
+			& > a{
+				font-size: inherit;
+				display: inline-block;
+				padding-top: 1rem;
+				padding-bottom: 1rem;
+				@extend %posrelative;
+				&:after{
+					font-family: fontAwesome;
+					content: "\f107";
+					padding-left: 5px;
+					font-size: 1.2rem;
+					@extend %basetransition;
+				}
+				&:hover{
+					&:after{
+						content: "\f106";
+					}
+				}
+				span{
+
+				}
+				&:hover{
+					& + ul{
+						@extend %visible;
+					}
+				}
+			}
+		}
+		&__menu{
+		    @extend %posabsolute;
+		    z-index: 11;
+		    top: 100%;
+		    width: 200px;
+		    background-color: #fff;
+		    padding: 1.5rem 0;  
+		    right: 0;
+		    width: auto;
+		    min-width: 120px;
+		    z-index: 111;
+		    text-align: center;
+		    @include box-shadow(0 2px 12px 2px rgba(0, 0, 0, 0.1));
+		    @extend %invisible;
+		    @extend %basetransition;  
+		    li{
+		    	a{
+				    text-transform: uppercase;
+				    font-size: 1.1rem;
+				    display: block;
+				    padding: 1rem 3rem;
+		    	}
+		    }
+		}
+	}
+	&-middle{
+		padding-top: 4rem;
+		padding-bottom: 4rem;
+		&-right{
+			@extend %flexbox;
+			@extend %align-center;
+			@extend %justify-end;
+		}
+	}
+	&-contact-info{
+		@include flexbox;
+		&__item{
+			@extend %posrelative;
+			padding-left: 1.6rem;
+			&:not(:first-child){
+				margin-left: 2rem;
+			}
+			&:before{
+				@extend %pseudo;
+				left: 0;
+				top: 0;
+				width: 1px;
+				height: 100%;
+				background-color: $border-color;
+			}
+			span{
+			    display: block;
+			    @extend %heading-color;
+			    font-size: 12px;
+			    line-height: 16px;
+				&:first-child{
+					@extend %body-color;
+				}
+			}
+		}
+	}
+	&-style-1{
+		.user-info-menu{
+			margin-top: 3.5rem;
+		}
+	}
+	&-style-3{
+		.header{
+			&-inner{
+				padding-top: 0;
+				padding-bottom: 1.5rem;
+				@include breakpoint(medium){
+					padding-bottom: 0;
+				}
+			}
+			&-top{
+				@include breakpoint(medium){
+					display: none;
+				}
+			}
+			&-middle{
+				@include breakpoint(medium){
+					padding-top: 2rem;
+					padding-bottom: 2rem;
+				}
+			}
+			&-bottom{
+				@include breakpoint(medium){
+					display: none;
+				}
+			}
+		}
+	}
+	&-style-4{
+		.logo-box{
+			figure{
+				@extend %flexbox;
+				@extend %justify-start;
+			}
+		}
+		.header{
+			&-left{
+				.toolbar-btn{
+					margin-left: 2rem;
+				}
+			}
+		}
+		.user-info-menu{
+			margin-top: 3.5rem;
+		}
+	}
+}
+
+.header:not(.header-transparent) {
+	.main-navigation{
+		.mainmenu{
+			&__item{
+				&.active{
+					& > a{
+						color: $primary-color;
+					}
+				}
+			}
+			&__link{
+				@extend %heading-color;
+				& > span{
+					&.mm-text{
+						&:after{
+							background: $primary-color;
+						}
+					}
+				}
+			}
+		}
+	}
+	.header-toolbar{
+		&__item{
+			& > a{
+				@extend %heading-color;
+			}
+		}
+	}
+	.menu-btn{
+		&:after{
+			@extend %heading-color;
+		}
+	}
+}
+
+/*-- 10.01 - User Info Menu CSS --*/
+
+.user-info-menu{
+	&-btn{
+		@extend %posrelative; 
+		&:after{
+			@extend %pseudo;
+			left: 0;
+			top: 100%;
+			width: 100%;
+			height: 100%;
+		}
+		&:hover{
+			.user-info-menu{
+				@extend %visible;
+				top: 100%;
+				pointer-events:visible;
+			}
+		}
+	}
+	@extend %posabsolute;
+	left: 50%;
+	top: 150%;
+	@include transform(translateX(-50%));
+	min-width: 20rem;
+	@include white-space(nowrap);
+	margin-top: 4rem;
+	background: #fff;
+	padding: 1.5rem 0;
+	pointer-events:none;
+	@include box-shadow(0 2px 12px 2px rgba(0, 0, 0, 0.1));
+	@extend %invisible;
+	@extend %basetransition;
+	z-index: 111;
+
+	li{
+		a{
+			text-transform: uppercase;
+			font-size: 11px;
+			display: block;
+			padding: 10px 30px;
+			@extend %body-color;
+			text-align: left;
+			&:hover{
+				@extend %primary-color;
+			}
+		}
+	}
+}
+
+/*-- 10.02 - Mini Cart Btn CSS --*/
+
+.mini-cart-btn{
+	sup{
+		@extend %posabsolute;
+	    font-family: Arial, Helvetica, sans-serif;
+	    font-size: 10px;
+	    height: 15px;
+	    line-height: 15px;
+	    color: #fff;
+	    display: block;
+	    top: 0px;
+	    right: 10px;
+	    min-width: 15px;
+	    text-align: center;
+	    padding: 0;
+	    background-color: #4A4141;
+	    border-radius: 50%;
+	    @include breakpoint(medium){
+	    	background-color: $body-color;
+	    }
+	}
+}
+
+/*-- 10.03 - Header Mobile CSS --*/
+
+.header-mobile{
+	display: none;
+	@extend %posrelative;
+	width: 100%;
+	z-index: 115;
+	padding-top: 2rem;
+	padding-bottom: 2rem;
+	background-color: #fff;
+	@include breakpoint(medium){
+		display: block;
+	}
+
+	.user-info-menu{
+		margin-top: 2rem;
+	}
+}
+
+/*-- 10.04 - Sticky Header CSS --*/
+
+.sticky-header{
+    position: fixed !important;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 999;
+    margin: 0;
+    background-color: #fff;
+    @include animation(fadeInDown .8s ease-in-out);
+    @include box-shadow(0 1px 3px rgba(0,0,0,.14));
+    padding: 2rem 0;
+	
+	.main-navigation{
+	    .mainmenu{
+	    	&__item{
+	    		& > a{
+	    			color: $heading-color;
+	    		}
+	    		&.menu-item-has-children{
+	    			& > ul{
+	    				margin-top: 2rem;
+	    			}
+	    		}
+	    	}
+	    	&--2{
+		    	.mainmenu__item{
+		    		&.menu-item-has-children{
+		    			& > ul{
+		    				margin-top: 2rem;
+		    			}
+		    		}
+		    	}
+	    	}
+	    }
+	}
+    .header-toolbar{
+    	&__item{
+	    	& > a{
+	    		color: $heading-color;
+	    		&.menu-btn{
+	    			&:after{
+	    				color: $heading-color;
+	    			}
+	    		}
+	    	}
+    	}
+    }
+    .mini-cart-btn{
+    	sup{
+    		background-color: #4A4141;
+    	}
+    }
+    .user-info-menu{
+    	margin-top: 2rem;
+    }
+	.logo{
+		&--normal{
+			@extend %visible;
+			height: auto !important;
+		}
+		&--transparency{
+			@extend %invisible;
+			height: 0 !important;
+		}
+	}
+	.sticky-logo{
+		display: block;
+	}
+	.sticky-toolbar{
+		display: block;
+	}
+
+	&.header-mobile{
+	    .user-info-menu{
+	    	margin-top: 2rem;
+	    }
+	}
+}
+
+/*-- 10.05 - Header Transparent CSS --*/
+
+.header-transparent{
+	background-color: transparent;
+	@include breakpoint(medium){
+		background: #fff;
+	}
+	.logo{
+		&--normal{
+			@extend %invisible;
+			height: 0;
+			@include breakpoint(medium){
+				visibility: visible;
+				opacity: 1;
+				height: auto;
+			}
+		}
+		&--transparency{
+			@extend %visible;
+			height: auto;
+			@include breakpoint(medium){
+				visibility: hidden;
+				opacity: 0;
+				height: 0;
+			}
+		}
+	}
+	&.header-aside{
+		@include box-shadow(none);
+		background-color: transparent;
+		.logo{
+			&--normal{
+				visibility: visible;
+				opacity: 1;
+				height: auto;
+			}
+		}
+	}
+}
+.enable-header-transparent{
+	.header-aside{
+		@include box-shadow(none);
+		background-color: transparent;
+	}
+}
+
+/*-- 10.06 - Header Aside CSS --*/
+
+.header-aside{
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	top: 0;
+	width: 37rem;
+	min-height: 100vh;
+	z-index: 111;
+	background-color: #fff;
+	@include box-shadow(0px 0px 60px 0px rgba(41, 44, 58, 0.06));
+
+	@include breakpoint(xlarge){
+		width: 27rem;
+	}
+	@include breakpoint(medium){
+		display: none;
+	}
+	&__inner{
+		padding: 7rem 8rem 5rem;
+		height: 100vh;
+		@include breakpoint(xlarge){
+			padding: 5rem 3rem;
+		}
+	}
+	&__top{
+		.header-toolbar{
+			.toolbar-btn{
+				font-size: 2.4rem;
+				@extend %heading-color;
+			}
+		}
+	}
+	.main-navigation{
+		.mainmenu{
+			&__item{
+				&:not(:last-child){
+					margin-bottom: 5px;
+				}
+				&.menu-item-has-children{
+					& > ul{
+						text-align: left;
+						&.megamenu{
+							left: 100%;
+							@include transform(translateX(0%));
+						}
+					}
+				}
+			}
+		}
+	}
+	.copyright-text{
+		margin-bottom: 5px;
+	}
+
+	&-style-2{
+		.header{
+			&-toolbar{
+				@include justify-content(center);
+			}
+		}
+		.user-info-menu{
+			margin-top: 0;
+			left: 0;
+			@include transform(translateX(0));
+			li{
+				a{
+					text-align: center;
+					@extend %heading-color;
+				}
+			}
+		}
+	}
+}
+
+.enable-header-aside{
+	.header-toolbar{
+		&__item{
+			& > a{
+				@extend %heading-color;
+			}
+		}
+	}
+	.menu-btn{
+		&:after{
+			@extend %heading-color;
+		}
+	}
+    .mini-cart-btn{
+    	sup{
+    		background-color: #4A4141;
+    	}
+    }
+}
+
+
+
+

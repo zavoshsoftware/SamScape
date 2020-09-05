@@ -1,0 +1,63 @@
+﻿@model ViewModels.ActivateViewModel
+@{
+    ViewBag.Title = "Activate";
+    Layout = "~/Views/Shared/FrontEnd/_FronEndLayout.cshtml";
+}
+
+<section class="breadcrumb-area">
+	<div class="container-fluid custom-container">
+		<div class="row">
+			<div class="col-xl-12">
+				<div class="bc-inner">
+					<p>
+						<a href="/">قانون گستر  |</a>
+						فعال سازی
+					</p>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+
+<div class="container">
+	<div class="row">
+		<div class="col-md-6 col-sm-10 offset-sm-1 col-xs-12  offset-md-3 login">
+			@using (Html.BeginForm("activate", "Account", new { userCode = ViewBag.UserCode}, FormMethod.Post, new {@class = "panel-body wrapper-lg", role = "form"}))
+			{
+				if (TempData["WrongCode"] != null)
+				{
+					<p class="alert alert-danger">
+						@TempData["WrongCode"]
+					</p>
+				}
+				@Html.AntiForgeryToken()
+				<div class="login-header">
+					فعال سازی حساب کاربری
+				</div>
+				<div class="login-form">
+					<p class="alert alert-savadimo">
+						برای شماره همراه @ViewBag.cellNumber کد تایید ارسال گردید <a href="/register">ویرایش شماره</a>
+					</p>
+					<div class="form-group">
+						<label for="exampleInputEmail1">کد فعال سازی</label>
+
+						<div class="input-group mb-2">
+							<div class="input-group-prepend">
+								<div class="input-group-text"><i class="fa fa-mobile"></i>
+								</div>
+							</div>
+							<input type="text" name="Code" readonly onfocus="this.removeAttribute('readonly');" class="form-control" id="Code" placeholder="کد فعال سازی">
+						</div>
+					</div>
+
+					<button type="submit" class="btn btn-savadimo-login">فعال سازی</button>
+				</div>
+			}
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-6 col-sm-10 offset-sm-1 col-xs-12  offset-md-3 login-footer">
+			<label>قبلا در ساوادیمو ثبت نام کرده اید؟</label> <a href="register">ورود به ساوادیمو</a>
+		</div>
+	</div>
+</div>

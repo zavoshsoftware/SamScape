@@ -1,0 +1,343 @@
+/*****************************
+34. Tabs CSS
+*****************************/
+
+/*-- 34.00 - tab style 1 --*/
+
+.tab-style-1{
+	.nav{
+		&-tabs{
+			border-bottom: 0;
+			@include justify-content(center);
+			@include breakpoint(xxsmall){
+				@include flex-direction(column);
+			}
+		}
+		&-link{
+			@extend %tab-link-style-1;
+			span{
+				@extend %tab-link-span-style-1;
+			}
+			@include breakpoint(xlarge){
+				font-size: 3rem;
+				line-height: 1.4;
+			}
+			@include breakpoint(small){
+				font-size: 2rem;
+				margin: 0 2rem;
+			}
+			@include breakpoint(xxsmall){
+				margin-left: 0;
+				margin-right: 0;
+				border-bottom: none;
+				span{
+					padding:0 0 .5rem;
+					border-width: 0 0 2px;
+				}
+			}
+
+			&:first-child{
+				margin-left: 0;
+			}
+			&:last-child{
+				margin-right: 0;
+			}
+			&:not(:last-child){
+				@include breakpoint(xxsmall){
+					margin-bottom: 1rem;
+				}
+			}
+			&.active{
+				border-color: transparent;
+				@extend %heading-color;
+				@include border-radius(0);
+				span{
+					@extend %primary-border-color;
+				}
+				&:hover{
+					border-color: transparent;
+					span{
+						@extend %primary-border-color;
+					}
+				}
+			}
+			&:hover{
+				border-color: transparent;
+				@include border-radius(0);
+			}
+		}
+	}
+	&-2{
+		.nav{
+			&-link{
+				span{
+					border: none;
+					padding-bottom: 0;
+				}
+			}
+		}
+	}
+}
+
+/*-- 34.01 - tab style 2 --*/
+
+.tab-style-2{
+	.nav{
+		&-tabs{
+			border-bottom: 0;
+			@include justify-content(center);
+			@include breakpoint(xxsmall){
+				@include flex-direction(column);
+			}
+		}
+		&-link{
+			@extend %tab-link-style-1;
+			@extend %heading-color;
+			font-size: 1.4rem;
+			font-weight: 400;
+			margin: 0;
+			@include breakpoint(small){
+				@include flex-basis(100%);
+				text-align: center;
+				font-size: 1.5rem;
+				&:not(:last-child){
+					margin-bottom: 0;
+				}
+			}
+			span{
+				@extend %tab-link-span-style-1;
+				padding: 1.8rem 3rem;
+				border-width: 2px;
+				border-style: solid;
+				border-color: transparent;
+				display: block;
+				@include breakpoint(medium){
+					padding: 1rem 1.8rem;
+				}
+				@include breakpoint(small){
+					padding: 0 .5rem .5rem;
+					border-width: 0 0 2px;
+					display: inline-block;
+					font-size: 1.8rem;
+				}
+				@include breakpoint(xsmall){
+					font-size: 1.6rem;
+					margin-bottom: .5rem;
+				}
+			}
+			&:not(:last-child){
+				span{
+					@include breakpoint(small){
+						margin-bottom: 1rem;	
+					}
+					@include breakpoint(xsmall){
+						margin-bottom: .5rem;	
+					}
+				}
+			}
+			&.active{
+				span{
+					@extend %primary-border-color;
+				}
+			}
+		}
+	}
+}
+
+/*-- 34.02 - tab style 3 --*/
+
+.tab-style-3{
+	.nav{
+		&-tabs{
+			border-bottom: 0;
+		}
+		&-link{
+		    font-size: 1.4rem;
+		    font-weight: 400;
+		    margin: 0;
+			padding: 0;
+			margin: 0 !important;
+			border: 0px solid transparent;
+			@include border-radius(0);
+			&:not(:last-child){
+				span{
+					@include breakpoint(small){
+						margin-bottom: 1rem;
+					}
+					@include breakpoint(xsmall){
+						margin-bottom: .5rem;
+					}
+				}
+			}
+			span{
+			    padding: 1.8rem 3rem;
+			    border-width: 2px;
+			    border-style: solid;
+			    border-color: transparent;
+			    display: block;
+			    @extend %heading-color;
+			    @include breakpoint(medium){
+			    	padding: 1.4rem 2rem !important;
+			    }
+			    @include breakpoint(small){
+				    padding: 0 .5rem .5rem !important;
+				    border-width: 0 0 2px;
+				    display: inline-block;
+				    font-size: 1.8rem;
+			    }
+			    @include breakpoint(xsmall){
+					font-size: 1.6rem;
+			    }
+			}
+			&.active{
+				span{
+					border-color: #cf987e;
+				}
+			}
+			&:hover{
+
+			}
+		}
+	}
+	&-1{
+		.nav{
+			&-link{
+				span{
+					@include breakpoint(large){
+						padding: 15px 25px;
+					}
+				}
+			}
+		}
+	}
+}
+/*-- 34.02 - tab style 4 --*/
+
+.tab-style-4{
+	.nav{
+		&-tabs{
+			border-bottom: 0;
+		}
+		&-link{
+			padding: 0;
+			margin: 0 !important;
+			border: 0px solid transparent;
+			@include border-radius(0);
+			span{
+				display: block;
+			    padding: 15px 30px !important;
+			    line-height: 20px;
+			    font-size: 14px;
+			    @extend %body-color;
+			}
+			&.active{
+				border: 0px solid transparent;
+				background-color: $color-white-light-4;
+				@extend %heading-color;
+			}
+			&:hover{
+
+			}
+		}
+	}
+}
+
+/*-- 34.03 - tab Content --*/
+
+.tab-content{
+	.tab-pane{
+		&.active{
+			.airi-product{
+				animation: airiFadeInUp .5s linear .1s;
+			}
+		}
+	}
+}
+
+/*-- 34.04 - Product Data tab --*/
+
+.tab-style-1.product-data-tab{
+	.product-data-tab{
+		&__head{
+		}
+		&__link{
+			&.nav-link{
+				color: $body-color;
+				font-size: 2.4rem;
+				margin: 0 2rem;
+				span{
+					padding:0 0 1rem;
+				}
+				@include breakpoint(large){
+					font-size: 1.8rem;
+					line-height: 1.4;
+				}
+				@include breakpoint(xsmall){
+					margin: 0;
+				}
+				&.active{
+					color: $heading-color;
+				}
+			}
+		}
+		&__content{
+		    width: 1070px !important;
+		    margin-left: auto;
+		    margin-right: auto;
+		    max-width: 100%;
+		}
+	}	
+}
+	
+
+
+/*-- 34.05 - User Dashboard tab --*/
+
+.user-dashboard-tab{
+	@extend %flexbox;
+	@extend %align-start;
+	&__head{
+		background-color: $color-white-dark-1;
+		padding: 1.5rem 0;
+		@include flex-basis(19rem);
+		max-width: 19rem;
+		margin-right: 3rem;
+		@include breakpoint(small){
+			@include flex-basis(100%);
+			max-width: 100%;
+			width: 100%;
+			margin-right: 0;
+			margin-bottom: 3rem;
+			padding: 0;
+		}
+		.nav-link{
+		    display: block;
+		    padding: 1rem 3rem;
+		    @include breakpoint(small){
+		    	padding: 1.2rem;
+		    }
+			&.active, 
+			&:hover{
+				@extend %primary-bg-color;
+				@extend %white-color;
+			}
+		}
+	}
+
+	&__content{
+		@include flex-basis(calc(100% - 22rem));
+		max-width: calc(100% - 22rem);
+		@include breakpoint(small){
+			@include flex-basis(100%);
+			max-width: 100%;
+			width: 100%;
+		}
+		p{
+			a{
+				&:hover{
+					text-decoration: underline;
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,254 @@
+﻿@model ViewModels.CartViewModel
+@{
+    ViewBag.Title = "سبد خرید";
+    Layout = "~/Views/Shared/FrontEnd/_FrontEndLayout.cshtml";
+}
+
+
+<div class="breadcrumb_section bg_gray page-title-mini" style="background-image: url('../../images/banner2.jpg');">
+    <div class="container">
+        <!-- STRART CONTAINER -->
+        <div class="row align-items-center">
+            <div class="col-md-6">
+                <div class="page-title">
+                    <h1>سبد خرید</h1>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <ol class="breadcrumb justify-content-md-end">
+                    <li class="breadcrumb-item"><a href="/">صفحه اصلی</a></li>
+                    <li class="breadcrumb-item active">سبد خرید</li>
+                </ol>
+            </div>
+        </div>
+    </div><!-- END CONTAINER-->
+</div>
+<div class="section">
+    <div class="container">
+        @if (Model.Products.Count() > 0) { 
+        <div class="row">
+            <div class="col-12">
+                <div class="table-responsive shop_cart_table">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th class="product-thumbnail">&nbsp;</th>
+                                <th class="product-name">محصول</th>
+                                <th class="product-price">قیمت</th>
+                                <th class="product-quantity">تعداد</th>
+                                <th class="product-subtotal">جمع</th>
+                                <th class="product-remove">&nbsp;</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var product in Model.Products)
+                            {
+                                <tr>
+                                    <td class="product-thumbnail"><a href="#"><img src="@product.Product.ImageUrl" alt="product1"></a></td>
+                                    <td class="product-name" data-title="Product"><a href="#">@product.Product.Title</a></td>
+                                    <td class="product-price" data-title="Price">@product.Amount</td>
+                                    <td class="product-quantity" data-title="Quantity">
+                                        <div class="quantity">
+                                            @*<input type="button" value="-" class="minus">*@
+                                            <input type="text" name="quantity" value="@product.Quantity" title="Qty" class="qty" size="4" disabled="disabled">
+                                            @*<input type="button" value="+" class="plus">*@
+                                        </div>
+                                    </td>
+                                    <td class="product-subtotal" data-title="Total">@product.RowAmount</td>
+                                    <td class="product-remove" data-title="Remove"><a href="/Basket/remove/@product.Product.Code"><i class="ti-close"></i></a></td>
+                                </tr>
+                            }
+                        </tbody>
+                        <tfoot>
+                            <tr>
+                                <td colspan="6" class="px-0">
+                                    <div class="row no-gutters align-items-center">
+
+                                        <div class="col-lg-4 col-md-6 mb-3 mb-md-0">
+                                            <div class="coupon field_form input-group">
+                                                <input type="text" value="" class="form-control form-control-sm" id="coupon" placeholder="کد تخفیف..">
+                                                <div class="input-group-append">
+                                                    <button class="btn btn-fill-out btn-sm" type="submit" onclick="addDiscountCode();">اعمال کد تخفیف</button>
+                                                </div>
+                                            </div>
+                                            <div>
+                                                <div class="alert alert-danger" id="errorDiv"></div>
+                                                <div class="alert alert-success" id="SuccessDiv">کد تخفیف وارد شده با موفقیت ثبت شد.</div>           
+                                            </div>
+                                        </div>
+                                      
+                                        @*<div class="col-lg-8 col-md-6 text-left text-md-right">
+                                                                       </div>*@
+                                    </div>
+                                </td>
+                            </tr>
+                        </tfoot>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12">
+                <div class="medium_divider"></div>
+                <div class="divider center_icon"><i class="ti-shopping-cart-full"></i></div>
+                <div class="medium_divider"></div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6" id="user-info-section">
+                <div class="heading_s1 mb-3">
+                    <h6>اطلاعات مشتری</h6>
+                </div>
+                <div class="field_form shipping_calculator">
+                    <div class="form-row">
+                        <div class="form-group col-lg-6">
+                            <input required="required" placeholder="نام و نام خانوادگی" class="form-control" name="name" type="text" id="txtFullName">
+                        </div>
+                        <div class="form-group col-lg-6">
+                            <input required="required" placeholder="شماره موبایل" class="form-control" name="name" type="text" id="txtCellNum">
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group col-lg-6">
+                            <input required="required" placeholder="کد پستی" class="form-control" name="name" type="text" id="postal">
+                        </div>
+                        <div class="form-group col-lg-6">
+                            <input required="required" placeholder="ایمیل" class="form-control" name="name" type="text" id="email">
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group col-lg-6">
+                            <div class="custom_select">
+                                <select class="form-control" id="Province">
+                                    <option value="">استان...</option>
+                                    @foreach (var province in Model.Provinces)
+                                    {
+                                        <option value="@province.Id">@province.Title</option>
+
+                                    }
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group col-lg-6">
+                            <div class="custom_select">
+                                <select class="form-control" id="city">
+                                    <option value="">شهر...</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group col-lg-12">
+                            <input required="required" placeholder="آدرس" class="form-control" name="name" type="text" id="address">
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group col-lg-12">
+                            <input required="required" placeholder="توضیحات" class="form-control" name="name" type="text" id="orderNotes">
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group col-lg-12">
+                            <button class="btn btn-fill-line" type="submit" id="btnSendOtp" onclick="registerUser();">تکمیل سفارش</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6" id="otp-section">
+                <div class="border p-3 p-md-4">
+                    <div class="heading_s1 mb-3">
+                        <h6>تایید تلفن همراه</h6>
+                    </div>
+                    <div class="row">
+                        <p class="alert alert-danger" id="error-box"></p>
+                        <p class="alert alert-info">یک کد فعال سازی برای شماره موبایل شما ارسال شد.</p>
+                    </div>
+                    <div class="row">
+                        <div class="form-row">
+                            <div class="form-group col-lg-12">
+                                <input required="required" placeholder="کد فعال سازی" class="form-control" name="name" type="text" id="txtActivationCode">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group col-lg-12">
+                            <button id="btnFinalize" onclick="FinalizeOrder();" class="btn btn-fill-line">
+                                پرداخت
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="border p-3 p-md-4">
+                    <div class="heading_s1 mb-3">
+                        <h6>اطلاعات سفارش</h6>
+                    </div>
+                    <div class="table-responsive">
+                        <table class="table">
+                            <tbody>
+                                <tr>
+                                    <td class="cart_total_label">مبلغ سفارش</td>
+                                    <td class="cart_total_amount">@Model.SubTotal</td>
+                                </tr>
+                                <tr>
+                                    <td class="cart_total_label">تخفیف</td>
+                                    <td class="cart_total_amount">@Model.DiscountAmount</td>
+                                </tr>
+                                <tr>
+                                    <td class="cart_total_label">هزینه حمل</td>
+                                    <td class="cart_total_amount">@Model.ShipmentAmount</td>
+                                </tr>
+                                <tr>
+                                    <td class="cart_total_label">جمع کل</td>
+                                    <td class="cart_total_amount"><strong>@Model.Total</strong></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    @*<a href="#" class="btn btn-fill-out">تکمیل فرایند خرید</a>*@
+                </div>
+            </div>
+
+        </div>
+        }
+        else
+
+        {
+            <p class="alert alert-warning text-center">سبد خرید شما خالی است</p>
+        }
+    </div>
+</div>
+
+@section scripts{
+    <script>
+
+
+        $('#Province').on('change',
+            function () {
+                var SelectedValue = $(this).val();
+                if (SelectedValue !== "") {
+                    var procemessage = "<option value='0'> صبرکنید...</option>";
+                    $("#city").html(procemessage).show();
+                    $.ajax(
+                        {
+                            url: "/Basket/FillCities",
+                            data: { id: SelectedValue },
+                            cache: false,
+                            type: "POST",
+                            success: function (data) {
+                                var markup = "<option value='0'>انتخاب شهر</option>";
+                                for (var x = 0; x < data.length; x++) {
+                                    markup += "<option value=" + data[x].Value + ">" + data[x].Text + "</option>";
+                                }
+                                $("#city").html(markup).show();
+                            },
+                            error: function (reponse) {
+                                alert("error : " + reponse);
+                            }
+                        });
+                }
+            });
+
+    </script>
+}

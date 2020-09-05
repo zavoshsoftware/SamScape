@@ -1,0 +1,60 @@
+﻿@model ViewModels.BlogGroupViewModel
+@{
+    ViewBag.Title = Model.BlogGroup.Title;
+    Layout = "~/Views/Shared/FrontEnd/_FrontEndLayout.cshtml";
+}
+
+<div class="breadcrumb_section bg_gray page-title-mini" style="background-image: url('../../images/banner2.jpg');">
+    <div class="container">
+        <!-- STRART CONTAINER -->
+        <div class="row align-items-center">
+            <div class="col-md-6">
+                <div class="page-title">
+                    <h1>لیست محصولات</h1>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <ol class="breadcrumb justify-content-md-end">
+                    <li class="breadcrumb-item"><a href="/">صفحه اصلی</a></li>
+                    <li class="breadcrumb-item"><a href="#">لیست بلاگ ها</a></li>
+                    <li class="breadcrumb-item active">@Model.BlogGroup.Title</li>
+                </ol>
+            </div>
+        </div>
+    </div><!-- END CONTAINER-->
+</div>
+
+<div class="main_content">
+
+    <!-- START SECTION BLOG -->
+    <div class="section">
+        <div class="container">
+            <div class="row">
+                @foreach (var blog in Model.Blogs)
+                {
+                    <div class="col-xl-3 col-lg-4 col-md-6">
+                        <div class="blog_post blog_style2 box_shadow1">
+                            <div class="blog_img">
+                                <a href="blog-single.html">
+                                    <img src="@blog.ImageUrl" alt="@blog.Title">
+                                </a>
+                            </div>
+                            <div class="blog_content bg-white">
+                                <div class="blog_text">
+                                    <h6 class="blog_title"><a href="/blog/@Model.BlogGroup.UrlParam/@blog.UrlParam">@blog.Title</a></h6>
+                                    <ul class="list_none blog_meta">
+                                        <li><a href="#"><i class="ti-calendar"></i>@blog.CreationDate.ToShortDateString()</a></li>
+                                    </ul>
+                                    <p>@Html.Raw(string.Format(blog.Summery.Length > 100 ? blog.Summery.Substring(0, 100) + "..." : blog.Summery))</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                }
+            </div>
+           
+        </div>
+    </div>
+    <!-- END SECTION BLOG -->
+ 
+</div>

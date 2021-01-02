@@ -92,7 +92,7 @@ namespace Models
         [Required(ErrorMessage = "لطفا {0} را وارد نمایید.")]
         public bool IsInHome { get; set; }
         [Display(Name = "Title", ResourceType = typeof(Resources.Models.ProductGroup))]
-        public Guid ProductGroupId { get; set; }
+        public Guid? ProductGroupId { get; set; }
         public virtual ProductGroup ProductGroup { get; set; }
        
         public virtual ICollection<ProductImage> ProductImages { get; set; }
@@ -112,7 +112,7 @@ namespace Models
         {
             public configuration()
             {
-                HasRequired(p => p.ProductGroup).WithMany(t => t.Products).HasForeignKey(p => p.ProductGroupId);
+                HasOptional(p => p.ProductGroup).WithMany(t => t.Products).HasForeignKey(p => p.ProductGroupId);
                
                
             }

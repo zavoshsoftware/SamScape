@@ -451,7 +451,7 @@ a.forget-pass {
 }
 
 .sam-days {
-    border: 1px solid #00a7ad;
+    border: 1px solid #e72b93;
     text-align: center;
     margin: 0 20px;
     padding: 15px 0;
@@ -464,19 +464,19 @@ a.forget-pass {
 
 
     .days-title span {
-        background-color: #00a7ad;
+        background-color: #e72b93;
         color: #fff;
         padding: 3px 50px;
         margin-top: 10px;
-        border: 1px solid #00a7ad;
+        border: 1px solid #e72b93;
         margin-bottom: 10px;
     }
 
 
     .days-title span:hover {
         background-color: #fff;
-        color: #00a7ad;
-        border: 1px solid #00a7ad;
+        color: #e72b93;
+        border: 1px solid #e72b93;
     }
 
 

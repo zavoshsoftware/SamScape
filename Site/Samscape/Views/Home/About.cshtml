@@ -25,23 +25,63 @@
 <div class="main_content">
 
     <!-- STAT SECTION ABOUT -->
-    <div class="section">
+    <div class="section ">
         <div class="container">
             <div class="row align-items-center">
                 <div class="col-lg-6">
-                    <div class="about_img scene mb-4 mb-lg-0">
-                        <img src="@Model.About.ImageUrl" alt="about_img" />
-                    </div>
+                    <picture class="about_img scene mb-4 mb-lg-0 bose-image">
+                        <img src="@Model.About.ImageUrl" on alt="about_img" />
+                    </picture>
                 </div>
                 <div class="col-lg-6">
-                    <div class="heading_s1">
-                        <h2>@Model.About.Title</h2>
-                    </div>
-                <p>@Html.Raw(Model.About.Body)</p>
+                    <picture class="sam-logo-2">
+                        <img src="~/assets/images/logo2.png" />
+                    </picture>
                 </div>
             </div>
         </div>
     </div>
+    <div class="section bg-cayan">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="heading_s1">
+                        <h2 class="text-white">@Model.About.Title</h2>
+                    </div>
+                    <p>@Html.Raw(Model.About.Body)</p>
+                    <p>
+                        SamScape Holding, inorder product without factory ,packing and branding the top iraninan products and the aim of exporting to developed countries and inter national franchises ,takes a small step to enehance the value of iran mines,identifying and introducing processed products from industrial mineral soils.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="section">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <p>بیش از جهل درصد ذخایر بنتونیت دنیا در ایران قرار گرفته است که 90 درصد آن در استان خراسان جنوبی می باشد .لازم به ذکر است که کیفیت این ماده معدنی در رتبه بندی جهانی جزء بهترین ها می باشد.</p>
+                    <p>
+                        More than 40% the worlds bentonits resserves in Iran , 90% located in soth khorasan province.it should be noted the quality of this mineral is one of the best in world ranking .
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="section bg-cayan">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <p>یکس از تولیدات ما در حوزه های معدنی ارئه خاک بستر گربه با ویژگی آنتی باکتریال و کلامپینگ بالا می باشد .این محصول که از بنتونیت طبیعی تولید شده و با نام تجاری joyful sampet cat litter عرضه می گردد.</p>
+                    <p>
+                        One of our products in mineral is providing cat litter with high anti bacterial and clumping properties .this product is made of natural bentonit and it is offered on under the brand name joyful sampet cat litter.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <!-- END SECTION ABOUT -->
     <!-- START SECTION WHY CHOOSE -->
     <div class="section bg_light_blue2 pb_70">
@@ -56,22 +96,22 @@
             <div class="row justify-content-center">
                 @foreach (var text in Model.WhySampet)
                 {
-                <div class="col-lg-4 col-sm-6">
-                    <div class="icon_box icon_box_style4 box_shadow1">
-                        <div class="icon">
-                            <i class="ti-pencil-alt"></i>
-                        </div>
-                        <div class="icon_box_content">
-                            <h5>@text.Title</h5>
-                            <p>@Html.Raw(text.Body)</p>
+                    <div class="col-lg-4 col-sm-6">
+                        <div class="icon_box icon_box_style4 box_shadow1">
+                            <div class="icon">
+                                <i class="ti-pencil-alt"></i>
+                            </div>
+                            <div class="icon_box_content">
+                                <h5>@text.Title</h5>
+                                <p>@Html.Raw(text.Body)</p>
+                            </div>
                         </div>
                     </div>
-                </div>
                 }
             </div>
         </div>
     </div>
     <!-- END SECTION WHY CHOOSE -->
-   
-   
+
+
 </div>

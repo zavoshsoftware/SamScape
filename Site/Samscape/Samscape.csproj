@@ -260,6 +260,7 @@
     <Content Include="assets\images\blog_small_img8.jpg" />
     <Content Include="assets\images\cart_thamb1.jpg" />
     <Content Include="assets\images\cart_thamb2.jpg" />
+    <Content Include="assets\images\cat.png" />
     <Content Include="assets\images\cat_img1.png" />
     <Content Include="assets\images\cat_img2.png" />
     <Content Include="assets\images\cat_img3.png" />
@@ -277,6 +278,7 @@
     <Content Include="assets\images\cl_logo6.png" />
     <Content Include="assets\images\cl_logo7.png" />
     <Content Include="assets\images\discover.png" />
+    <Content Include="assets\images\banner-title.png" />
     <Content Include="assets\images\el_blog_img1.jpg" />
     <Content Include="assets\images\el_blog_img2.jpg" />
     <Content Include="assets\images\el_blog_img3.jpg" />
@@ -351,6 +353,7 @@
     <Content Include="assets\images\loading.gif" />
     <Content Include="assets\images\logo-sampet-light.png" />
     <Content Include="assets\images\logo-sampet.png" />
+    <Content Include="assets\images\logo2.png" />
     <Content Include="assets\images\logo_dark.png" />
     <Content Include="assets\images\logo_light.png" />
     <Content Include="assets\images\marker.png" />
@@ -396,6 +399,7 @@
     <Content Include="assets\images\product_zoom_img2.jpg" />
     <Content Include="assets\images\product_zoom_img3.jpg" />
     <Content Include="assets\images\product_zoom_img4.jpg" />
+    <Content Include="assets\images\S2.png" />
     <Content Include="assets\images\sampet-box.png" />
     <Content Include="assets\images\sampet-box2.png" />
     <Content Include="assets\images\sampet-box3.png" />

@@ -201,10 +201,9 @@ namespace Samscape.Controllers
 
             ProductDetailViewModel productDetail = new ProductDetailViewModel()
             {
-               
                 Product = product,
-                ProductGroup = productGroup,
-                MainProductGroup = db.ProductGroups.Where(p => p.Id == productGroup.ParentId && p.IsActive && !p.IsDeleted).FirstOrDefault(),
+                //ProductGroup = productGroup,
+              //  MainProductGroup = db.ProductGroups.Where(p => p.Id == productGroup.ParentId && p.IsActive && !p.IsDeleted).FirstOrDefault(),
                 RelatedProducts = db.Products.Where(c => c.ProductGroupId == product.ProductGroupId && c.IsDeleted == false && c.IsActive && c.Id != product.Id)
                     .OrderBy(c => c.Order).Take(4).ToList(),
                 ProductImages = db.ProductImages.Where(c => c.ProductId == product.Id && c.IsDeleted == false && c.IsActive).ToList(),

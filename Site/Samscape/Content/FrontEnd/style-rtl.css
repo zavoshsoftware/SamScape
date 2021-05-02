@@ -445,3 +445,41 @@ a.forget-pass {
 #errorDiv, #SuccessDiv {
     display: none;
 }
+
+.box-img {
+    width: auto !important;
+}
+
+.sam-days {
+    border: 1px solid #00a7ad;
+    text-align: center;
+    margin: 0 20px;
+    padding: 15px 0;
+}
+
+
+.days-title  {
+    margin-top: 10px;
+}
+
+
+    .days-title span {
+        background-color: #00a7ad;
+        color: #fff;
+        padding: 3px 50px;
+        margin-top: 10px;
+        border: 1px solid #00a7ad;
+        margin-bottom: 10px;
+    }
+
+
+    .days-title span:hover {
+        background-color: #fff;
+        color: #00a7ad;
+        border: 1px solid #00a7ad;
+    }
+
+
+.blog_text p {
+    text-align: justify;
+}

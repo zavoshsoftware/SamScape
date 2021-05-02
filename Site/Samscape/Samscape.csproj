@@ -267,6 +267,7 @@
     <Content Include="assets\images\cat_img5.png" />
     <Content Include="assets\images\cat_img6.png" />
     <Content Include="assets\images\cat_img7.png" />
+    <Content Include="assets\images\ceo.jpg" />
     <Content Include="assets\images\close.png" />
     <Content Include="assets\images\cl_logo1.png" />
     <Content Include="assets\images\cl_logo2.png" />
@@ -348,6 +349,8 @@
     <Content Include="assets\images\letest_post2.jpg" />
     <Content Include="assets\images\letest_post3.jpg" />
     <Content Include="assets\images\loading.gif" />
+    <Content Include="assets\images\logo-sampet-light.png" />
+    <Content Include="assets\images\logo-sampet.png" />
     <Content Include="assets\images\logo_dark.png" />
     <Content Include="assets\images\logo_light.png" />
     <Content Include="assets\images\marker.png" />
@@ -393,6 +396,11 @@
     <Content Include="assets\images\product_zoom_img2.jpg" />
     <Content Include="assets\images\product_zoom_img3.jpg" />
     <Content Include="assets\images\product_zoom_img4.jpg" />
+    <Content Include="assets\images\sampet-box.png" />
+    <Content Include="assets\images\sampet-box2.png" />
+    <Content Include="assets\images\sampet-box3.png" />
+    <Content Include="assets\images\sampet-box4.png" />
+    <Content Include="assets\images\samscape-cat.png" />
     <Content Include="assets\images\shop_banner.jpg" />
     <Content Include="assets\images\shop_banner1.jpg" />
     <Content Include="assets\images\shop_banner2.jpg" />
@@ -1217,6 +1225,10 @@
     <Compile Include="Migrations\202008061019031_V08.designer.cs">
       <DependentUpon>202008061019031_V08.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202101020540181_V09.cs" />
+    <Compile Include="Migrations\202101020540181_V09.designer.cs">
+      <DependentUpon>202101020540181_V09.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\DatabaseContext.cs" />
     <Compile Include="Models\DatabaseContextInitializer.cs" />
@@ -1579,6 +1591,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202008061019031_V08.resx">
       <DependentUpon>202008061019031_V08.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202101020540181_V09.resx">
+      <DependentUpon>202101020540181_V09.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

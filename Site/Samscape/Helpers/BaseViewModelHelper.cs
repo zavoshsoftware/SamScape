@@ -14,25 +14,11 @@ namespace Helpers
     {
         private DatabaseContext db = new DatabaseContext();
 
-        public List<MenuProductGroups> GetMenuProductGroup()
+        public List<Product> GetMenuProductGroup()
         {
-            List<MenuProductGroups> productGroups = new List<MenuProductGroups>();
-
-            List<ProductGroup> parentProductGroups = db.ProductGroups.Where(c => c.ParentId == null)
-                .OrderBy(current => current.Order).ToList();
-
-            foreach (ProductGroup parentProductGroup in parentProductGroups)
-            {
-                productGroups.Add(new MenuProductGroups()
-                {
-                    ProductGroup = parentProductGroup,
-
-                    ChildProductGroups = db.ProductGroups.Where(c => c.ParentId == parentProductGroup.Id)
-                        .OrderBy(current => current.Order).ToList()
-                });
-            }
-
-            return productGroups;
+            List<Product> products = db.Products.Where(c => c.IsDeleted == false && c.IsActive).OrderBy(c => c.Order)
+                .ToList();
+            return products;
         }
         public List<MenuBlogs> GetMenuBlogs()
         {

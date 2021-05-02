@@ -10,7 +10,7 @@ namespace ViewModels
     public class _BaseViewModel
     {
         readonly BaseViewModelHelper _baseViewModelHelper = new BaseViewModelHelper();
-        public List<MenuProductGroups> MenuProductGroups
+        public List<Product> MenuProducts
         {
             get { return _baseViewModelHelper.GetMenuProductGroup(); }
         }
@@ -24,11 +24,11 @@ namespace ViewModels
         }
     }
 
-    public class MenuProductGroups
-    {
-        public ProductGroup ProductGroup { get; set; }
-        public List<ProductGroup> ChildProductGroups { get; set; }
-    }
+    //public class MenuProductGroups
+    //{
+    //    public ProductGroup ProductGroup { get; set; }
+    //    public List<ProductGroup> ChildProductGroups { get; set; }
+    //}
     public class MenuBlogs
     {
         public BlogGroup BlogGroup { get; set; }

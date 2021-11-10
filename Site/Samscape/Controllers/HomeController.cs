@@ -46,5 +46,14 @@ namespace Samscape.Controllers
             };
             return View(contactView);
         }
+        [Route("GlobalSell")]
+        public ActionResult GlobalSell()
+        {
+            ContactViewModel contactView = new ContactViewModel()
+            {
+                Texts = db.Texts.Where(a => a.IsActive && !a.IsDeleted && a.TextType.UrlParam == "contact").ToList()
+            };
+            return View(contactView);
+        }
     }
 }

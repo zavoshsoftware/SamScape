@@ -16,7 +16,7 @@ namespace Helpers
 
         public List<Product> GetMenuProductGroup()
         {
-            List<Product> products = db.Products.Where(c => c.IsDeleted == false && c.IsActive).OrderBy(c => c.Order)
+            List<Product> products = db.Products.Where(c => c.IsDeleted == false && c.IsActive &&c.IsAvailable).OrderBy(c => c.Order)
                 .ToList();
             return products;
         }

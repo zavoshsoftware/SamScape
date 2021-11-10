@@ -220,6 +220,7 @@
     <Content Include="assets\images\about_img.jpg" />
     <Content Include="assets\images\ajax-loader.gif" />
     <Content Include="assets\images\amarican_express.png" />
+    <Content Include="assets\images\banner-title2.png" />
     <Content Include="assets\images\banner1.jpg" />
     <Content Include="assets\images\banner10.jpg" />
     <Content Include="assets\images\banner11.jpg" />
@@ -1550,6 +1551,7 @@
     <Content Include="Views\BlogComments\Index.cshtml" />
     <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Home\Contact.cshtml" />
+    <Content Include="Views\Home\GlobalSell.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

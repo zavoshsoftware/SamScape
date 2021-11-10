@@ -94,16 +94,20 @@
                         </div>
                         <hr />
                         <div class="cart_extra">
-                            <div class="cart-product-quantity">
-                                <div class="quantity">
-                                    <input type="button" value="-" class="minus">
-                                    <input type="text" name="quantity" value="1" title="تعداد" class="qty" size="4" id="basketQty">
-                                    <input type="button" value="+" class="plus">
-                                </div>
-                            </div>
-                            <div class="cart_btn">
-                                <button class="btn btn-fill-out btn-addtocart" type="button" onclick="addToBasketFromDetail('@Model.Product.Code');"><i class="icon-basket-loaded"></i>افزودن به سبد خرید</button>
-                            </div>
+	                        @if (Model.Product.IsAvailable)
+	                        {
+	                        <div class="cart-product-quantity">
+		                        <div class="quantity">
+			                        <input type="button" value="-" class="minus">
+			                        <input type="text" name="quantity" value="1" title="تعداد" class="qty" size="4" id="basketQty">
+			                        <input type="button" value="+" class="plus">
+		                        </div>
+	                        </div>
+
+	                        <div class="cart_btn">
+		                        <button class="btn btn-fill-out btn-addtocart" type="button" onclick="addToBasketFromDetail('@Model.Product.Code');"><i class="icon-basket-loaded"></i>افزودن به سبد خرید</button>
+	                        </div>
+	                        }
                         </div>
                         <hr />
 

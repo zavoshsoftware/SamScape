@@ -1,353 +1,387 @@
 ﻿@model ViewModels.HomeViewModel
 @{
-    Layout = "~/Views/Shared/FrontEnd/_FrontEndLayout.cshtml";
+	Layout = "~/Views/Shared/FrontEnd/_FrontEndLayout.cshtml";
 }
 
 
-   
-    <div class="banner_section full_screen staggered-animation-wrap">
-        <div id="carouselExampleControls" class="carousel slide carousel-fade light_arrow carousel_style2" data-ride="carousel">
-            <div class="carousel-inner">
-                
-                    <div class="carousel-item active background_bg overlay_bg_50" data-img-src="/Uploads/Slider/812302930b0a4ecebfec05ece1f002d3.jpg">
-                        <div class="banner_slide_content banner_content_inner">
-                            <div class="container">
-                                <div class="row justify-content-center">
-	                                <div class="col-lg-4 col-md-4">
-		                                <div class="banner_content text_white text-center">
-		                                <img src="~/assets/images/sampet-box.png" class="box-img" data-animation="fadeInUp" data-animation-delay="0.1s"/>
-	                                </div>
-	                                </div>
-		                                <div class="col-lg-6 col-md-6">
-			                                <div class="banner_content text_white text-left">
-				                                @*<h5 class="mb-3 bg_strip staggered-animation text-uppercase" data-animation="fadeInDown" data-animation-delay="0.2s">تخفیف استثنایی</h5>*@
-				                                <img class="staggered-animation" src="~/assets/images/banner-title.png" />
-				                                   <p class="staggered-animation">با ثبت نام در سایت و ثبت اولین خرید 20 هزار تومان اعتبار رایگان دریافت کنید</p>
-				                                <button class="btn btn-white staggered-animation" onclick="addToBasket('1000','1');">افزودن به سبد خرید</button>
-			                                </div>
-		                                </div>
-	                                </div>
-                            </div>
-                        </div>
-                    </div>
-                 
-                    <div class="carousel-item background_bg overlay_bg_50" data-img-src="/Uploads/Slider/99c68f4542b9489db1c33008b0fba614.jpg">
-                        <div class="banner_slide_content banner_content_inner">
-                            <div class="container">
-                                <div class="row justify-content-center">
-	                                <div class="col-lg-4 col-md-4">
-		                                <div class="banner_content text_white text-center">
-		                                <img src="~/assets/images/sampet-box.png" class="box-img" data-animation="fadeInUp" data-animation-delay="0.1s"/>
-	                                </div>
-	                                </div>
-		                                <div class="col-lg-6 col-md-6">
-			                                <div class="banner_content text_white text-left">
-				                                @*<h5 class="mb-3 bg_strip staggered-animation text-uppercase" data-animation="fadeInDown" data-animation-delay="0.2s">تخفیف استثنایی</h5>*@
-                                                <img class="staggered-animation" src="~/assets/images/banner-title.png" />
-				                                   <p class="staggered-animation">با ثبت نام در سایت و ثبت اولین خرید 20 هزار تومان اعتبار رایگان دریافت کنید</p>
-																				<button class="btn btn-white staggered-animation" onclick="addToBasket('1000','1');">افزودن به سبد خرید</button>
-			                                </div>
-		                                </div>
-	                                </div>
-                            </div>
-                        </div>
-                    </div>
-                 
-               
-            </div>
-            <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev"><i class="ion-chevron-left"></i></a>
-            <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next"><i class="ion-chevron-right"></i></a>
-        </div>
-    </div>
-    <!-- END MAIN CONTENT -->
-    <div class="main_content">
 
-	    <div class="section">
-		    <div class="container">
-			    <div class="row align-items-center">
-				    <div class="col-lg-6">
-					    <div class="about_img scene mb-4 mb-lg-0">
-						    <img src="~/assets/images/sampet-box2.png" alt="about_img" />
-					    </div>
-				    </div>
-				    <div class="col-lg-6">
-					    <div class="heading_s1">
-						    <h2>خاک گربه صم پت</h2>
-					    </div>
-					    <p class="text-justify">هلدینگ samscape در راستای تولید بدون کارخانه، بسته بندی و برندسازی محصولات برتر ایرانی با هدف صادرات آن ها به کشورهای توسعه یافته و فرانچایز بین المللی، گامی هرچند کوچک در ارتقاء ارش معدن ایران و شناسایی و معرفی محصولات فرآوری شده حاصل از خاک های معدنی و صنعتی بر می دارد.</p>
-					    <p class="text-justify">
-						    یکی از تولیدات ما در حوزه های معدنی ارائه خاک بستر گربه با ویژگی آنتی باکتریال و کلامپینگ بالا می باشد. این محصول از بنتونیت طبیعی تولید شده و با نام تجاری joyful sampet cat litter عرضه می گردد.
-					    </p>
-					    <button class="btn btn-fill-out" onclick="addToBasket('1000','1');">افزودن به سبد خرید</button>
+<div class="banner_section full_screen staggered-animation-wrap">
+	<div id="carouselExampleControls" class="carousel slide carousel-fade light_arrow carousel_style2" data-ride="carousel">
+		<div class="carousel-inner">
 
-				    </div>
-			    </div>
-		    </div>
-	    </div>
-    
-	    <div class="section bg_light_blue2 pb_70">
-		    <div class="container bg-cat">
-			    <div class="row justify-content-center">
-				    <div class="col-lg-6 col-md-8">
-					    <div class="heading_s1 text-center">
-						    <h2>چرا سم پت</h2>
-					    </div>
-				    </div>
-			    </div>
-			    <div class="row justify-content-center">
-			 
-					    <div class="col-lg-4 col-sm-6">
-						    <div class="icon_box icon_box_style4 box_shadow1">
-							    <div class="icon">
-								    <i class="ti-pencil-alt"></i>
-							    </div>
-							    <div class="icon_box_content">
-								    <h5>زهکش قوی</h5>
-								    <p>توضیحاتی در این موضوع اینجا قرار می گیرد. توضیحاتی در این موضوع اینجا قرار می گیرد.</p>
-							    </div>
-						    </div>
-					    </div>
-				    
-					    <div class="col-lg-4 col-sm-6">
-						    <div class="icon_box icon_box_style4 box_shadow1">
-							    <div class="icon">
-								    <i class="ti-pencil-alt"></i>
-							    </div>
-							    <div class="icon_box_content">
-								    <h5>قدرت چسبندگی بالا</h5>
-								    <p>توضیحاتی در این موضوع اینجا قرار می گیرد. توضیحاتی در این موضوع اینجا قرار می گیرد.</p>
-							    </div>
-						    </div>
-					    </div>
-				    
-					    <div class="col-lg-4 col-sm-6">
-						    <div class="icon_box icon_box_style4 box_shadow1">
-							    <div class="icon">
-								    <i class="ti-pencil-alt"></i>
-							    </div>
-							    <div class="icon_box_content">
-								    <h5>نظافت آسان</h5>
-								    <p>توضیحاتی در این موضوع اینجا قرار می گیرد. توضیحاتی در این موضوع اینجا قرار می گیرد.</p>
-							    </div>
-						    </div>
-					    </div>
-				    
-					    <div class="col-lg-4 col-sm-6">
-						    <div class="icon_box icon_box_style4 box_shadow1">
-							    <div class="icon">
-								    <i class="ti-pencil-alt"></i>
-							    </div>
-							    <div class="icon_box_content">
-								    <h5>آنتی میکروبیال، آنتی باکتریال</h5>
-								    <p>توضیحاتی در این موضوع اینجا قرار می گیرد. توضیحاتی در این موضوع اینجا قرار می گیرد.</p>
-							    </div>
-						    </div>
-					    </div>
-				    
-				    <div class="col-lg-4 col-sm-6">
-					    <div class="icon_box icon_box_style4 box_shadow1">
-						    <div class="icon">
-							    <i class="ti-pencil-alt"></i>
-						    </div>
-						    <div class="icon_box_content">
-							    <h5>97% بدون گرد و غبار</h5>
-									<p>توضیحاتی در این موضوع اینجا قرار می گیرد. توضیحاتی در این موضوع اینجا قرار می گیرد.</p>
-						    </div>
-					    </div>
-				    </div>
-				    
-				    <div class="col-lg-4 col-sm-6">
-					    <div class="icon_box icon_box_style4 box_shadow1">
-						    <div class="icon">
-							    <i class="ti-pencil-alt"></i>
-						    </div>
-						    <div class="icon_box_content">
-							    <h5>دارای ویژگی گرانولی  </h5>
-									<p>توضیحاتی در این موضوع اینجا قرار می گیرد. توضیحاتی در این موضوع اینجا قرار می گیرد.</p>
-						    </div>
-					    </div>
-				    </div>
-				    <div class="col-lg-4 col-sm-6">
-					    <div class="icon_box icon_box_style4 box_shadow1">
-						    <div class="icon">
-							    <i class="ti-pencil-alt"></i>
-						    </div>
-						    <div class="icon_box_content">
-							    <h5>دوستدار طبیعت و گربه</h5>
-									<p>توضیحاتی در این موضوع اینجا قرار می گیرد. توضیحاتی در این موضوع اینجا قرار می گیرد.</p>
-						    </div>
-					    </div>
-				    </div>
-				    <div class="col-lg-4 col-sm-6">
-					    <div class="icon_box icon_box_style4 box_shadow1">
-						    <div class="icon">
-							    <i class="ti-pencil-alt"></i>
-						    </div>
-						    <div class="icon_box_content">
-							    <h5>کنترل بوی بد</h5>
-									<p>توضیحاتی در این موضوع اینجا قرار می گیرد. توضیحاتی در این موضوع اینجا قرار می گیرد.</p>
-						    </div>
-					    </div>
-				    </div>
-				    
-				    <div class="col-lg-4 col-sm-6">
-					    <div class="icon_box icon_box_style4 box_shadow1">
-						    <div class="icon">
-							    <i class="ti-pencil-alt"></i>
-						    </div>
-						    <div class="icon_box_content">
-							    <h5>بهینه و مقرون به صرفه</h5>
-							    <p>توضیحاتی در این موضوع اینجا قرار می گیرد. توضیحاتی در این موضوع اینجا قرار می گیرد.</p>
-						    </div>
-					    </div>
-				    </div>
-				    
-			    </div>
-		    </div>
-	    </div>
-
-	    <div class="section">
-				<div class="container">
-					<div class="row">
-						<div class="col-lg-4 col-md-4 col-sm-12">
-							<div class="row sam-days">
-								<div class="col-3">
-									<img src="~/assets/images/sampet-box4.png" />
+			<div class="carousel-item active background_bg overlay_bg_50" data-img-src="/Uploads/Slider/812302930b0a4ecebfec05ece1f002d3.jpg">
+				<div class="banner_slide_content banner_content_inner">
+					<div class="container">
+						<div class="row justify-content-center">
+							@*<div class="col-lg-4 col-md-4">
+									<div class="banner_content text_white text-center">
+									<img src="~/assets/images/sampet-box.png" class="box-img" data-animation="fadeInUp" data-animation-delay="0.1s"/>
 								</div>
-								<div class="col-3 text-right">
+								</div>*@
+							<div class="col-lg-8 col-md-8">
+								<div class="banner_content text_white text-left">
+									@*<h5 class="mb-3 bg_strip staggered-animation text-uppercase" data-animation="fadeInDown" data-animation-delay="0.2s">تخفیف استثنایی</h5>*@
+									<img class="staggered-animation" src="~/assets/images/banner-title2.png" />
+									@*<p class="staggered-animation">با ثبت نام در سایت و ثبت اولین خرید 20 هزار تومان اعتبار رایگان دریافت کنید</p>
+										<button class="btn btn-white staggered-animation" onclick="addToBasket('1000','1');">افزودن به سبد خرید</button>*@
 								</div>
-									
-								<div class="col-3 text-right">
-										<img src="~/assets/images/samscape-cat.png"/>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="carousel-item background_bg overlay_bg_50" data-img-src="/Uploads/Slider/99c68f4542b9489db1c33008b0fba614.jpg">
+				<div class="banner_slide_content banner_content_inner">
+					<div class="container">
+						<div class="row justify-content-center">
+							<div class="col-lg-8 col-md-8">
+								<div class="banner_content text_white text-left">
+									@*<h5 class="mb-3 bg_strip staggered-animation text-uppercase" data-animation="fadeInDown" data-animation-delay="0.2s">تخفیف استثنایی</h5>*@
+									<img class="staggered-animation" src="~/assets/images/banner-title2.png" />
+									@*<p class="staggered-animation">با ثبت نام در سایت و ثبت اولین خرید 20 هزار تومان اعتبار رایگان دریافت کنید</p>
+										<button class="btn btn-white staggered-animation" onclick="addToBasket('1000','1');">افزودن به سبد خرید</button>*@
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+
+		</div>
+		<a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev"><i class="ion-chevron-left"></i></a>
+		<a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next"><i class="ion-chevron-right"></i></a>
+	</div>
+</div>
+<!-- END MAIN CONTENT -->
+<div class="main_content">
+	<section class=" py-5">
+		<div class="container">
+			<div class="heading m-b-40">
+				<h4 class="text-center">محصولات</h4>
+			</div>
+
+			<div class="shop">
+				<div class="row">
+					@foreach (var product in Model.HomeProducts)
+					{
+						<div class="col-lg-4">
+							<div class="product">
+								<div class="product-image">
+									<a href="/product/@product.Code">
+										<img alt="Shop product image!" src="@product.ImageUrl">
+									</a>
+
+									@if (product.IsAvailable != true)
+									{
+										<span class="product-hot">ناموجود</span>
+									}
+								</div>
+
+								<div class="product-description p-3">
+									<div class="product-title">
+										<h3><a href="/product/@product.Code">@product.Title</a></h3>
 									</div>
-
-								<div class="col-12 days-title">
-									<span>
-									30 روز
-									</span>	</div>
+									<div class="product-price">
+										<ins>@product.AmountStr</ins>
+									</div>
 								</div>
-						</div>
-						<div class="col-lg-4 col-md-4 col-sm-12">
-							<div class="row sam-days">
-								<div class="col-3">
-									<img src="~/assets/images/sampet-box4.png" />
-								</div>
-								<div class="col-3 text-right">
-								</div>		<div class="col-3 text-right">
-									<img src="~/assets/images/samscape-cat.png" />
-
-								</div>
-
-								<div class="col-3 text-right">
-									<img src="~/assets/images/samscape-cat.png" />
-
-								</div>
-
-								<div class="col-12 days-title">
-									<span>
-										15 روز
-									</span>	</div>
 							</div>
 						</div>
-						<div class="col-lg-4 col-md-4 col-sm-12">
-							<div class="row sam-days">
-								<div class="col-3">
-									<img src="~/assets/images/sampet-box4.png" />
-								</div>
-								<div class="col-3 text-right">
-									<img src="~/assets/images/samscape-cat.png" />
-								</div>
-								<div class="col-3 text-right">
-									<img src="~/assets/images/samscape-cat.png" />
-								</div>
-								<div class="col-3 text-right">
-									<img src="~/assets/images/samscape-cat.png" />
-								</div>
-
-								<div class="col-12 days-title">
-									<span>
-										10 روز
-									</span>	</div>
-							</div>
+					}
+				</div>
+			</div>
+		</div>
+	</section>
+	@*<div class="section">
+			<div class="container">
+				<div class="row align-items-center">
+					<div class="col-lg-6">
+						<div class="about_img scene mb-4 mb-lg-0">
+							<img src="~/assets/images/sampet-box2.png" alt="about_img" />
 						</div>
-						
-						
+					</div>
+					<div class="col-lg-6">
+						<div class="heading_s1">
+							<h2>خاک گربه صم پت</h2>
+						</div>
+						<p class="text-justify">هلدینگ samscape در راستای تولید بدون کارخانه، بسته بندی و برندسازی محصولات برتر ایرانی با هدف صادرات آن ها به کشورهای توسعه یافته و فرانچایز بین المللی، گامی هرچند کوچک در ارتقاء ارش معدن ایران و شناسایی و معرفی محصولات فرآوری شده حاصل از خاک های معدنی و صنعتی بر می دارد.</p>
+						<p class="text-justify">
+							یکی از تولیدات ما در حوزه های معدنی ارائه خاک بستر گربه با ویژگی آنتی باکتریال و کلامپینگ بالا می باشد. این محصول از بنتونیت طبیعی تولید شده و با نام تجاری joyful sampet cat litter عرضه می گردد.
+						</p>
+						<button class="btn btn-fill-out" onclick="addToBasket('1000','1');">افزودن به سبد خرید</button>
 
 					</div>
 				</div>
-        </div>
-        <!-- END SECTION BANNER -->
-        <!-- START SECTION SHOP -->
-        @*<div class="section pb_20  bg_light_blue2">
-            <div class="container">
-                <div class="row justify-content-center">
-                    <div class="col-md-6">
-                        <div class="heading_s4 text-center">
-                            <h2>@Model.MiddleBanner.Title</h2>
-                        </div>
-                        <p class="text-center leads">@Html.Raw(Model.MiddleBanner.Body)</p>
-                    </div>
-                </div>
-           
-	            <div class="section pb_20 small_pt">
-		            <div class="container">
-			            <div class="row">
-                            @foreach (var text in Model.SubActivities)
-                            {
-				            <div class="col-md-4">
-					            <div class="sale-banner mb-3 mb-md-4">
-						            <a class="hover_effect1" href="#">
-							            <img src="@text.ImageUrl" alt="shop_banner_img7">
-						            </a>
-					            </div>
-				            </div> 
-                            }
-			            </div>
-		            </div>
-	            </div>
+			</div>
+		</div>*@
 
-            </div>
-        </div>*@
-        <!-- END SECTION SHOP -->
-        <!-- START SECTION BLOG -->
-        <div class="section small_pt pb_70">
-            <div class="container">
-                <div class="row justify-content-center">
-                    <div class="col-lg-6 col-md-8">
-                        <div class="heading_s1 text-center">
-                            <h2>جدیدترین اخبار و مقالات</h2>
-                        </div>
-                        <p class="leads text-center">از این قسمت می توانید جدیدترین اخبار و مقالات ما را دنبار نمایید.</p>
-                    </div>
-                </div>
-                <div class="row justify-content-center">
-                    @foreach (var blog in Model.HomeBlogs)
-                    {
-                    <div class="col-lg-4 col-md-6">
-                        <div class="blog_post blog_style1 box_shadow1">
-                            <div class="blog_img">
-                                <a href="/blog/@blog.BlogGroup.UrlParam/@blog.UrlParam">
-                                    <img src="@blog.ImageUrl"  alt="@blog.Title"/>
-                                </a>
-                            </div>
-                            <div class="blog_content bg-white">
-                                <div class="blog_text">
-                                    <h5 class="blog_title"><a href="/blog/@blog.BlogGroup.UrlParam/@blog.UrlParam">@blog.Title</a></h5>
-                                    <ul class="list_none blog_meta">
-                                        <li><a href="#"><i class="ti-calendar"></i>@blog.CreationDate.ToShortDateString()</a></li>
-                                        <li><a href="#"><i class="ti-comments"></i> @blog.BlogComments.Count() یادداشت</a></li>
-                                    </ul>
-                                    <p>@Html.Raw(string.Format(blog.Summery.Length > 100 ? blog.Summery.Substring(0, 100) + "..." : blog.Summery))</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    }
-                </div>
-            </div>
-        </div>
-        <!-- END SECTION BLOG -->
+	<div class="section bg_light_blue2 pb_70">
+		<div class="container bg-cat">
+			<div class="row justify-content-center">
+				<div class="col-lg-6 col-md-8">
+					<div class="heading_s1 text-center">
+						<h2>چرا سم پت</h2>
+					</div>
+				</div>
+			</div>
+			<div class="row justify-content-center">
 
-    </div>
-    <!-- END MAIN CONTENT -->
-   
+				<div class="col-lg-4 col-sm-6">
+					<div class="icon_box icon_box_style4 box_shadow1">
+						<div class="icon">
+							<i class="ti-pencil-alt"></i>
+						</div>
+						<div class="icon_box_content">
+							<h5>زهکش قوی</h5>
+							<p>توضیحاتی در این موضوع اینجا قرار می گیرد. توضیحاتی در این موضوع اینجا قرار می گیرد.</p>
+						</div>
+					</div>
+				</div>
+
+				<div class="col-lg-4 col-sm-6">
+					<div class="icon_box icon_box_style4 box_shadow1">
+						<div class="icon">
+							<i class="ti-pencil-alt"></i>
+						</div>
+						<div class="icon_box_content">
+							<h5>قدرت چسبندگی بالا</h5>
+							<p>توضیحاتی در این موضوع اینجا قرار می گیرد. توضیحاتی در این موضوع اینجا قرار می گیرد.</p>
+						</div>
+					</div>
+				</div>
+
+				<div class="col-lg-4 col-sm-6">
+					<div class="icon_box icon_box_style4 box_shadow1">
+						<div class="icon">
+							<i class="ti-pencil-alt"></i>
+						</div>
+						<div class="icon_box_content">
+							<h5>نظافت آسان</h5>
+							<p>توضیحاتی در این موضوع اینجا قرار می گیرد. توضیحاتی در این موضوع اینجا قرار می گیرد.</p>
+						</div>
+					</div>
+				</div>
+
+				<div class="col-lg-4 col-sm-6">
+					<div class="icon_box icon_box_style4 box_shadow1">
+						<div class="icon">
+							<i class="ti-pencil-alt"></i>
+						</div>
+						<div class="icon_box_content">
+							<h5>آنتی میکروبیال، آنتی باکتریال</h5>
+							<p>توضیحاتی در این موضوع اینجا قرار می گیرد. توضیحاتی در این موضوع اینجا قرار می گیرد.</p>
+						</div>
+					</div>
+				</div>
+
+				<div class="col-lg-4 col-sm-6">
+					<div class="icon_box icon_box_style4 box_shadow1">
+						<div class="icon">
+							<i class="ti-pencil-alt"></i>
+						</div>
+						<div class="icon_box_content">
+							<h5>97% بدون گرد و غبار</h5>
+							<p>توضیحاتی در این موضوع اینجا قرار می گیرد. توضیحاتی در این موضوع اینجا قرار می گیرد.</p>
+						</div>
+					</div>
+				</div>
+
+				<div class="col-lg-4 col-sm-6">
+					<div class="icon_box icon_box_style4 box_shadow1">
+						<div class="icon">
+							<i class="ti-pencil-alt"></i>
+						</div>
+						<div class="icon_box_content">
+							<h5>دارای ویژگی گرانولی  </h5>
+							<p>توضیحاتی در این موضوع اینجا قرار می گیرد. توضیحاتی در این موضوع اینجا قرار می گیرد.</p>
+						</div>
+					</div>
+				</div>
+				<div class="col-lg-4 col-sm-6">
+					<div class="icon_box icon_box_style4 box_shadow1">
+						<div class="icon">
+							<i class="ti-pencil-alt"></i>
+						</div>
+						<div class="icon_box_content">
+							<h5>دوستدار طبیعت و گربه</h5>
+							<p>توضیحاتی در این موضوع اینجا قرار می گیرد. توضیحاتی در این موضوع اینجا قرار می گیرد.</p>
+						</div>
+					</div>
+				</div>
+				<div class="col-lg-4 col-sm-6">
+					<div class="icon_box icon_box_style4 box_shadow1">
+						<div class="icon">
+							<i class="ti-pencil-alt"></i>
+						</div>
+						<div class="icon_box_content">
+							<h5>کنترل بوی بد</h5>
+							<p>توضیحاتی در این موضوع اینجا قرار می گیرد. توضیحاتی در این موضوع اینجا قرار می گیرد.</p>
+						</div>
+					</div>
+				</div>
+
+				<div class="col-lg-4 col-sm-6">
+					<div class="icon_box icon_box_style4 box_shadow1">
+						<div class="icon">
+							<i class="ti-pencil-alt"></i>
+						</div>
+						<div class="icon_box_content">
+							<h5>بهینه و مقرون به صرفه</h5>
+							<p>توضیحاتی در این موضوع اینجا قرار می گیرد. توضیحاتی در این موضوع اینجا قرار می گیرد.</p>
+						</div>
+					</div>
+				</div>
+
+			</div>
+		</div>
+	</div>
+
+	<div class="section">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-4 col-md-4 col-sm-12">
+					<div class="row sam-days">
+						<div class="col-3">
+							<img src="~/assets/images/sampet-box4.png" />
+						</div>
+						<div class="col-3 text-right">
+						</div>
+
+						<div class="col-3 text-right">
+							<img src="~/assets/images/samscape-cat.png" />
+						</div>
+
+						<div class="col-12 days-title">
+							<span>
+								30 روز
+							</span>
+						</div>
+					</div>
+				</div>
+				<div class="col-lg-4 col-md-4 col-sm-12">
+					<div class="row sam-days">
+						<div class="col-3">
+							<img src="~/assets/images/sampet-box4.png" />
+						</div>
+						<div class="col-3 text-right">
+						</div>		<div class="col-3 text-right">
+							<img src="~/assets/images/samscape-cat.png" />
+
+						</div>
+
+						<div class="col-3 text-right">
+							<img src="~/assets/images/samscape-cat.png" />
+
+						</div>
+
+						<div class="col-12 days-title">
+							<span>
+								15 روز
+							</span>
+						</div>
+					</div>
+				</div>
+				<div class="col-lg-4 col-md-4 col-sm-12">
+					<div class="row sam-days">
+						<div class="col-3">
+							<img src="~/assets/images/sampet-box4.png" />
+						</div>
+						<div class="col-3 text-right">
+							<img src="~/assets/images/samscape-cat.png" />
+						</div>
+						<div class="col-3 text-right">
+							<img src="~/assets/images/samscape-cat.png" />
+						</div>
+						<div class="col-3 text-right">
+							<img src="~/assets/images/samscape-cat.png" />
+						</div>
+
+						<div class="col-12 days-title">
+							<span>
+								10 روز
+							</span>
+						</div>
+					</div>
+				</div>
+
+
+
+			</div>
+		</div>
+	</div>
+	<!-- END SECTION BANNER -->
+	<!-- START SECTION SHOP -->
+	@*<div class="section pb_20  bg_light_blue2">
+				<div class="container">
+						<div class="row justify-content-center">
+								<div class="col-md-6">
+										<div class="heading_s4 text-center">
+												<h2>@Model.MiddleBanner.Title</h2>
+										</div>
+										<p class="text-center leads">@Html.Raw(Model.MiddleBanner.Body)</p>
+								</div>
+						</div>
+
+					<div class="section pb_20 small_pt">
+						<div class="container">
+							<div class="row">
+												@foreach (var text in Model.SubActivities)
+												{
+								<div class="col-md-4">
+									<div class="sale-banner mb-3 mb-md-4">
+										<a class="hover_effect1" href="#">
+											<img src="@text.ImageUrl" alt="shop_banner_img7">
+										</a>
+									</div>
+								</div>
+												}
+							</div>
+						</div>
+					</div>
+
+				</div>
+		</div>*@
+	<!-- END SECTION SHOP -->
+	<!-- START SECTION BLOG -->
+	<div class="section small_pt pb_70">
+		<div class="container">
+			<div class="row justify-content-center">
+				<div class="col-lg-6 col-md-8">
+					<div class="heading_s1 text-center">
+						<h2>جدیدترین اخبار و مقالات</h2>
+					</div>
+					<p class="leads text-center">از این قسمت می توانید جدیدترین اخبار و مقالات ما را دنبار نمایید.</p>
+				</div>
+			</div>
+			<div class="row justify-content-center">
+				@foreach (var blog in Model.HomeBlogs)
+				{
+					<div class="col-lg-4 col-md-6">
+						<div class="blog_post blog_style1 box_shadow1">
+							<div class="blog_img">
+								<a href="/blog/@blog.BlogGroup.UrlParam/@blog.UrlParam">
+									<img src="@blog.ImageUrl" alt="@blog.Title" />
+								</a>
+							</div>
+							<div class="blog_content bg-white">
+								<div class="blog_text">
+									<h5 class="blog_title"><a href="/blog/@blog.BlogGroup.UrlParam/@blog.UrlParam">@blog.Title</a></h5>
+									<ul class="list_none blog_meta">
+										<li><a href="#"><i class="ti-calendar"></i>@blog.CreationDate.ToShortDateString()</a></li>
+										<li><a href="#"><i class="ti-comments"></i> @blog.BlogComments.Count() یادداشت</a></li>
+									</ul>
+									<p>@Html.Raw(string.Format(blog.Summery.Length > 100 ? blog.Summery.Substring(0, 100) + "..." : blog.Summery))</p>
+								</div>
+							</div>
+						</div>
+					</div>
+				}
+			</div>
+		</div>
+	</div>
+	<!-- END SECTION BLOG -->
+
+</div>
+<!-- END MAIN CONTENT -->

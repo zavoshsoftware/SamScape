@@ -483,3 +483,13 @@ a.forget-pass {
 .blog_text p {
     text-align: justify;
 }
+
+.product-hot {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background-color: red;
+    padding: 3px;
+    border-radius: 5px;
+    color: #fff;
+}
